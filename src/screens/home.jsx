@@ -5,9 +5,9 @@ import '../screens/home.css'
 
 function HomePage() {
   const images = [
-    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/c1.png',
-    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/c2.png',
-    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/c3.png',
+    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/c4.jpg',
+    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/c5.jpg',
+    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/c6.jpg',
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -94,18 +94,23 @@ function HomePage() {
       <div className='download'>
 
         {/* <div> */}
+        <a className="download-image" href="https://drive.google.com/file/d/1THUniNl3jTUDnGSDuloQYxyuHeBxj7RW/view?usp=sharing">       
         <img
           src="https://raw.githubusercontent.com/chatverse90/chatverse-images/main/playstore.png"
           alt="Sample Image"
           className="download-image"
         />
+        </a>
+        <a className="download-image" href="https://drive.google.com/file/d/1THUniNl3jTUDnGSDuloQYxyuHeBxj7RW/view?usp=sharing">
         <img
           src="https://raw.githubusercontent.com/chatverse90/chatverse-images/main/appstore.png"
           alt="Sample Image"
           className="download-image"
         />
+        </a>
         {/* </div> */}
       </div>
+      
       <ScrollToTopButton />
       {/* </div> */}
     </>
