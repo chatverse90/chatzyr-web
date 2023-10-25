@@ -5,9 +5,9 @@ import '../screens/home.css'
 
 function HomePage() {
   const images = [
-    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/3.jpg',
-    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/4.jpg',
-    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/5.jpg',
+    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/c1.png',
+    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/c2.png',
+    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/c3.png',
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
