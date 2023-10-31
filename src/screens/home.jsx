@@ -94,14 +94,14 @@ function HomePage() {
       <div className='download'>
 
         {/* <div> */}
-        <a className="download-image" href="https://drive.google.com/file/d/1THUniNl3jTUDnGSDuloQYxyuHeBxj7RW/view?usp=sharing">       
+        <a className="download-image" href="https://shorturl.at/pBDEP">       
         <img
           src="https://raw.githubusercontent.com/chatverse90/chatverse-images/main/playstore.png"
           alt="Sample Image"
           className="download-image"
         />
         </a>
-        <a className="download-image" href="https://drive.google.com/file/d/1THUniNl3jTUDnGSDuloQYxyuHeBxj7RW/view?usp=sharing">
+        <a className="download-image" href="https://shorturl.at/pBDEP">
         <img
           src="https://raw.githubusercontent.com/chatverse90/chatverse-images/main/appstore.png"
           alt="Sample Image"
