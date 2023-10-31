@@ -52,7 +52,13 @@
 }
 @media screen and (max-width: 768px) {
     .containerStyle {
-        flex-direction: column; /* Stack elements vertically */
+        flex-direction: column !important; /* Stack elements vertically */
+        width: 100%;
+    }
+
+    .contentContainerStyle{
+
+        flex-direction: column-reverse !important; 
     }
 
     .iframeContainerStyle {
@@ -61,15 +67,15 @@
     }
 
     .textContainerStyle {
-        width: 100%; /* Take up full width */
+        width: 90% !important; /* Take up full width */
     }
 
     .headingStyle {
         font-size: 24px; /* Adjust font size for smaller screens */
     }
     .iframeStyle {
-        width: 100%;
-        height: auto; /* Fixed missing 'px' */
+        width: 100% !important;
+        height: 1350px !important; /* Fixed missing 'px' */
         border:#333;
         background: #fff;
     }

@@ -60,7 +60,7 @@ function Report() {
                 <div className='textContainerStyle'>
                     <h2 style={{ color: '#F51118' }}>Chatzyr Report</h2>
                     <p className=''>
-                        At Chatzyr, we believe in fostering a friendly and respectful community. Your assistance is invaluable in maintaining a positive environment. You can support our moderation team by reporting any instances of inappropriate behavior by fellow users within the app or through the form below. If you prefer, you can also contact us via email at moderation@chatzyr.com.
+                        At Chatzyr, we believe in fostering a friendly and respectful community. Your assistance is invaluable in maintaining a positive environment. You can support our moderation team by reporting any instances of inappropriate behavior by fellow users within the app or through the form below. If you prefer, you can also contact us via email at Support@chatzyr.net.
 
                         If you're passionate about ensuring a pleasant user experience, you may even consider joining our team of ChatZyr moderators. Apply today to become an integral part of our community.
 

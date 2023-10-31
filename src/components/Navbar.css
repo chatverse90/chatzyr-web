@@ -31,6 +31,7 @@
     width: 100%;
     align-items: center;
     background: linear-gradient(to right, #F94b50, #F51118);
+    z-index: 1;
   }
 
   .menu.active {

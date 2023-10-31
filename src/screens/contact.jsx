@@ -23,10 +23,10 @@ const ContactUs = () => {
                     <FaModx className="icon" />
                     <p className="text">Report Email: Report.chatzyr@gmail.com</p>
                 </div>
-                <div className="contact-item">
+                {/* <div className="contact-item">
                     <FaMapMarker className="icon" />
                     <p className="text">47 , 47 , G thirteen  two  , Islamabad </p>
-                </div>
+                </div> */}
             </div>
             <ScrollToTopButton></ScrollToTopButton>
         </div>

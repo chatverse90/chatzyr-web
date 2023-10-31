@@ -8,6 +8,8 @@ import Suggestion from './screens/suggestion';
 import PrivacyAndTerms from './screens/pirvacyterms';
 import TermsofUse from './screens/terms';
 import ContactUs from './screens/contact';
+import Shop from './screens/shop';
+import VIPPackages from './screens/vip';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path='privacyterms' element={<PrivacyAndTerms/>}/>
           <Route path='termsofuse' element={<TermsofUse/>}/>
           <Route path='contactus' element={<ContactUs/>}/>
+          <Route path='shop' element={<Shop/>}/>
+          <Route path='vip' element={<VIPPackages/>}/>
         </Routes>
         <Footer />
       </>

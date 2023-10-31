@@ -32,17 +32,18 @@
   }
   
   .content {
-    padding: 10px;
+    /* padding: 10px; */
     text-align: center;
+    width: 100%;
   }
   
   .bullets {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 10px;
-    width: 100%;
+    /* padding: 10px; */
+   
   }
   .bullet2 {
     display: flex;
@@ -52,11 +53,12 @@
     /* padding: 10px; */
   }
   .bullet-item {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
-    align-self: auto;
+    width: 200px;
+    /* width: 300; */
   }
   
   .bullet-icon {
@@ -64,6 +66,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    
   }
   
   .download-image {
@@ -85,7 +88,8 @@
   }
 .custom-h3{
     color: black;
-    text-align: left;
+    /* text-align: left; */
+    /* align-self: flex-start; */
 }
 
 .custom-h4{
@@ -111,6 +115,7 @@
     width: 650px; /* Fixed width of the frame */
     height: 500px; /* Fixed height of the frame */
     position: relative;
+    margin: 20px;
   }
   
   .tablet-frame img {
@@ -184,7 +189,28 @@ body{
   }
 
   .tablet-frame {
-      display: none;
+    border: 10px solid #333;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    width: 300px; /* Fixed width of the frame */
+    height: 300px; /* Fixed height of the frame */
+    position: relative;
+    margin: 20px;
+  }
+
+  .tablet-frame img {
+    width: 100%; /* Set the width to 100% to fit within the frame */
+    height: 100%; /* Set the height to 100% to fit within the frame */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .tablet-frame img.active {
+    opacity: 1;
   }
 
   .bullet-item,
@@ -205,7 +231,7 @@ body{
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: flex-start;
+    justify-content: center;
     max-width: 100%; /* Limit the width to prevent text overflow */
     /* word-wrap: break-word; Wrap long words to the next line */
     margin: 0px; /* Add spacing between bullet items */

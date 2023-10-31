@@ -25,14 +25,14 @@ function Navbar() {
             <div className="bar"></div>
           </div>
         </div>
-        <ul className={`menu ${isMenuOpen ? 'active' : ''}`}>
-          <li className="menu-item">
+        <ul className={`menu ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu} >
+          <li className="menu-item"  >
             {/* <a className="menu-link" href="/">Home</a> */}
             <Link className="menu-link" to="/">Home</Link>
           </li>
           <li className="menu-item">
             {/* <a className="menu-link" href="/">Shop</a> */}
-            <Link className="menu-link" to="/">Shop</Link>
+            <Link className="menu-link" to="/shop">Shop</Link>
           </li>
           <li className="menu-item">
             <Link className="menu-link" to="/report">Report</Link>

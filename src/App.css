@@ -14,7 +14,7 @@ main {
 
 /* Additional styling for Navbar */
 .MuiAppBar-colorPrimary {
-  background-color: #2E3B4E; /* Change this to ChatGum's background color */
+  background-color: #2E3B4E; 
 }
 
 .MuiTypography-h6 {

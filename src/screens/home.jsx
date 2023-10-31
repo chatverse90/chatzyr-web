@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import '../components/animatedText.css';
 import ScrollToTopButton from '../components/ScrollTop';
-import '../screens/home.css'
+import '../screens/home.css';
+import VideoPlayer from '../components/videoplayer';
 
 function HomePage() {
   const images = [
-    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/3.jpg',
-    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/4.jpg',
-    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/5.jpg',
+    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/c4.jpg',
+    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/c5.jpg',
+    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/c6.jpg',
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -34,9 +35,10 @@ function HomePage() {
     <>
       {/* <Navbar /> */}
       {/* <div className='container'> */}
-      <div className='header'>
+      <VideoPlayer />
+      {/* <div className='header'> */}
         {/* <p className="animated-text">Welcome To CHATZYR website</p> */}
-      </div>
+      {/* </div> */}
       <div className='main'>
         <main className='content'>
           <div className='bullets'>
@@ -49,7 +51,7 @@ function HomePage() {
               </div>
               <div className='bullet-item'>
                 <h3 class="custom-h3" >PRIVATE MESSAGES</h3>
-                <p class="custom-h3" >Send private messages, and chat in private with whomever you choose.</p>
+                <p className="custom-h3" >Send private messages, and chat in private with whomever you choose.</p>
               </div>
               <div className='bullet-item'>
                 <h3 class="custom-h3" >MESSAGE BOARDS</h3>
@@ -94,18 +96,23 @@ function HomePage() {
       <div className='download'>
 
         {/* <div> */}
+        <a className="download-image" href="https://drive.google.com/file/d/1THUniNl3jTUDnGSDuloQYxyuHeBxj7RW/view?usp=sharing">       
         <img
           src="https://raw.githubusercontent.com/chatverse90/chatverse-images/main/playstore.png"
           alt="Sample Image"
           className="download-image"
         />
+        </a>
+        <a className="download-image" href="https://drive.google.com/file/d/1THUniNl3jTUDnGSDuloQYxyuHeBxj7RW/view?usp=sharing">
         <img
           src="https://raw.githubusercontent.com/chatverse90/chatverse-images/main/appstore.png"
           alt="Sample Image"
           className="download-image"
         />
+        </a>
         {/* </div> */}
       </div>
+      
       <ScrollToTopButton />
       {/* </div> */}
     </>
