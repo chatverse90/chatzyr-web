@@ -99,7 +99,7 @@ function HomePage() {
 
      
 
-        <a className="download-image" href="https://shorturl.at/pBDEP">       
+        <a className="download-image" href="https://drive.google.com/file/d/1aDCKaQoosz-BGOImm9q5dPnlX5jt_2jl/view?usp=sharing">       
 
         <img
           src="https://raw.githubusercontent.com/chatverse90/chatverse-images/main/playstore.png"
@@ -110,7 +110,7 @@ function HomePage() {
 
        
 
-        <a className="download-image" href="https://shorturl.at/pBDEP">
+        <a className="download-image" href="https://drive.google.com/file/d/1aDCKaQoosz-BGOImm9q5dPnlX5jt_2jl/view?usp=sharing">
 
         <img
           src="https://raw.githubusercontent.com/chatverse90/chatverse-images/main/appstore.png"
