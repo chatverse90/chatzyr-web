@@ -13,7 +13,7 @@ const ContactUs = () => {
             <div className="contact-info">
                 <div className="contact-item">
                     <FaPhone className="icon" />
-                    <p className="text">Phone: +13474671050</p>
+                    <p className="text">Phone: +13474671050<br />+923330688630 </p>
                 </div>
                 <div className="contact-item">
                     <FaEnvelope className="icon" />
@@ -23,10 +23,10 @@ const ContactUs = () => {
                     <FaModx className="icon" />
                     <p className="text">Report Email: Report.chatzyr@gmail.com</p>
                 </div>
-                {/* <div className="contact-item">
+                <div className="contact-item">
                     <FaMapMarker className="icon" />
-                    <p className="text">47 , 47 , G thirteen  two  , Islamabad </p>
-                </div> */}
+                    <p className="text">47 , St. 47 , G13/2  , Islamabad </p>
+                </div>
             </div>
             <ScrollToTopButton></ScrollToTopButton>
         </div>

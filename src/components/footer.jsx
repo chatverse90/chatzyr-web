@@ -16,9 +16,18 @@ function Footer() {
             {/* <a className='linkStyle' href="/contactus">Contact Us</a> */}
             <Link className="linkStyle" to="/contactus">Contact Us</Link>
             </li>
+            
+            <li className='menuItemStyle'>
+            {/* <a className='linkStyle' href="/privacyterms">Privacy Policy</a> */}
+            <Link className="linkStyle" to="/refund">Refund Policy</Link>
+            </li>
           <li className='menuItemStyle'>
             {/* <a className='linkStyle' href="/privacyterms">Privacy Policy</a> */}
             <Link className="linkStyle" to="/privacyterms">Privacy Policy</Link>
+            </li>
+            <li className='menuItemStyle'>
+            {/* <a className='linkStyle' href="/privacyterms">Privacy Policy</a> */}
+            <Link className="linkStyle" to="/policy">Shipping Policy</Link>
             </li>
         </ul>
         <div className='copyrightStyle'>

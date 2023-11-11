@@ -11,6 +11,8 @@ import ContactUs from './screens/contact';
 import Shop from './screens/shop';
 import VIPPackages from './screens/vip';
 import OrderItemPage from './screens/Order';
+import Policy from './screens/Policy';
+import RefundPolicy from './screens/RefundPolicy';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route path='shop' element={<Shop/>}/>
           <Route path='vip' element={<VIPPackages/>}/>
           <Route path='order' element={<OrderItemPage/>}/>
+          <Route path='policy' element={<Policy/>}/>
+          <Route path='refund' element={<RefundPolicy/>}/>
         </Routes>
         <Footer />
       </>

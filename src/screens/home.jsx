@@ -27,7 +27,7 @@ function HomePage() {
     },
     {
       question: 'How can I customize my profile on Chatzyr?',
-      answer: 'Chatzyr provides its users with the ultimate opportunity to customize their profile with Chatzur custom and VIP badges.',
+      answer: 'Chatzyr provides its users with the ultimate opportunity to customize their profile with Chatzyr custom and VIP badges.',
     },
     {
       question: 'Can I purchase custom text colors on Chatzyr?',
@@ -159,23 +159,14 @@ function HomePage() {
       <div className='download'>
 
         {/* <div> */}
-
-     
-
-        <a className="download-image" href="https://drive.google.com/file/d/1aDCKaQoosz-BGOImm9q5dPnlX5jt_2jl/view?usp=sharing">       
-
-
+        <a className="download-image" href="https://drive.google.com/file/d/1THUniNl3jTUDnGSDuloQYxyuHeBxj7RW/view?usp=sharing">       
         <img
           src="https://raw.githubusercontent.com/chatverse90/chatverse-images/main/playstore.png"
           alt="Sample Image"
           className="download-image"
         />
         </a>
-
-
-        <a className="download-image" href="https://drive.google.com/file/d/1aDCKaQoosz-BGOImm9q5dPnlX5jt_2jl/view?usp=sharing">
-
-
+        <a className="download-image" href="https://drive.google.com/file/d/1THUniNl3jTUDnGSDuloQYxyuHeBxj7RW/view?usp=sharing">
         <img
           src="https://raw.githubusercontent.com/chatverse90/chatverse-images/main/appstore.png"
           alt="Sample Image"
