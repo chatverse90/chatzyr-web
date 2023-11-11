@@ -10,6 +10,7 @@ import TermsofUse from './screens/terms';
 import ContactUs from './screens/contact';
 import Shop from './screens/shop';
 import VIPPackages from './screens/vip';
+import OrderItemPage from './screens/Order';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='contactus' element={<ContactUs/>}/>
           <Route path='shop' element={<Shop/>}/>
           <Route path='vip' element={<VIPPackages/>}/>
+          <Route path='order' element={<OrderItemPage/>}/>
         </Routes>
         <Footer />
       </>

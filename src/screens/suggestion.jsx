@@ -37,6 +37,7 @@ function Suggestion() {
                         title="Google Form"
                         className='iframeStyle'
                         scrolling="no"
+
                     >
                         Loading...
                     </iframe>

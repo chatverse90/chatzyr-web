@@ -1,11 +1,17 @@
-import React from 'react';
-import'./loader.css';
-const Loader = () => {
-  return (
-    <div className="loader">
-      <div className="spinner"></div>
-    </div>
-  );
-};
 
-export default Loader;
+import { TailSpin } from "react-loader-spinner";
+const LoaderComp = () => {
+	return (
+		<TailSpin
+			height="80"
+			width="80"
+			color="#F51118"
+			ariaLabel="tail-spin-loading"
+			radius="1"
+			wrapperStyle={{}}
+			wrapperClass=""
+			visible={true}
+		/>
+	);
+}; 
+export default LoaderComp;
