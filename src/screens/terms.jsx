@@ -1,8 +1,11 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './privacyterms.css'
 import ScrollToTopButton from '../components/ScrollTop';
 
 const TermsofUse = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scrolls to the top left of the page
+      }, []);
     return (
         <div className="container">
             <div className="content">

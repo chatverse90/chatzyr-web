@@ -1,9 +1,12 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './contact.css'; // Import your CSS for styling
 import { FaPhone, FaEnvelope, FaMapMarker, FaBiohazard, FaReact, FaAdversal, FaModx } from 'react-icons/fa'; // Import icons
 import ScrollToTopButton from '../components/ScrollTop';
 
 const ContactUs = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scrolls to the top left of the page
+      }, []);
     return (
         // <div className='container'>      
               <div className="contact-container">

@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './Order.css';
 import { useLocation } from 'react-router-dom';
 
 const OrderItemPage = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scrolls to the top left of the page
+      }, []);
     const location = useLocation();
     const data = location.state;
     const [orderDetails, setOrderDetails] = useState({});
