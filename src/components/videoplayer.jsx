@@ -22,7 +22,7 @@ class VideoPlayer extends Component {
     return (
       <div className="video-player-container">
         <video
-          src="https://raw.githubusercontent.com/chatverse90/chatverse-images/main/chatzyrvid.mp4"
+          src="https://raw.githubusercontent.com/chatverse90/chatverse-images/main/chatzry - Trim.mp4"
           autoPlay={isPlaying}
           loop // Enable video loop
           muted // Mute the video (important for autoplay on some devices)
