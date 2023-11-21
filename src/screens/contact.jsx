@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import './contact.css'; // Import your CSS for styling
 import { FaPhone, FaEnvelope, FaMapMarker, FaBiohazard, FaReact, FaAdversal, FaModx } from 'react-icons/fa'; // Import icons
 import ScrollToTopButton from '../components/ScrollTop';
@@ -6,18 +6,20 @@ import ScrollToTopButton from '../components/ScrollTop';
 const ContactUs = () => {
     useEffect(() => {
         window.scrollTo(0, 0); // Scrolls to the top left of the page
-      }, []);
+    }, []);
     return (
         // <div className='container'>      
-              <div className="contact-container">
-              <header className='headerStyle'>
+        <div className="contact-container">
+            <header className='headerStyle'>
                 <h1 className='headingStyle'>Contact Us</h1>
             </header>
             <br />
             <br />
-            <p className="text">
-  <strong>For top-tier website and app development, don't hesitate to reach out to us. Our team of <br />professionals is here to bring your business vision to life. Contact us today to embark on your journey of innovative solutions!</strong>
-</p>
+          
+                <p className="text">
+                    <strong>For top-tier website and app development, don't hesitate to reach out to us. Our team of professionals is here to bring your business vision to life. Contact us today to embark on your journey of innovative solutions!</strong>
+                </p>
+            
             <div className="contact-info">
                 <div className="contact-item">
                     <FaPhone className="icon" />
@@ -35,7 +37,7 @@ const ContactUs = () => {
                     <FaMapMarker className="icon" />
                     <p className="text">47 , St. 47 , G13/2  , Islamabad </p>
                 </div>
-            
+
 
             </div>
             <ScrollToTopButton></ScrollToTopButton>
