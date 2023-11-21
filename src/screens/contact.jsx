@@ -13,6 +13,11 @@ const ContactUs = () => {
               <header className='headerStyle'>
                 <h1 className='headingStyle'>Contact Us</h1>
             </header>
+            <br />
+            <br />
+            <p className="text">
+  <strong>For top-tier website and app development, don't hesitate to reach out to us. Our team of <br />professionals is here to bring your business vision to life. Contact us today to embark on your journey of innovative solutions!</strong>
+</p>
             <div className="contact-info">
                 <div className="contact-item">
                     <FaPhone className="icon" />
@@ -30,6 +35,8 @@ const ContactUs = () => {
                     <FaMapMarker className="icon" />
                     <p className="text">47 , St. 47 , G13/2  , Islamabad </p>
                 </div>
+            
+
             </div>
             <ScrollToTopButton></ScrollToTopButton>
         </div>
