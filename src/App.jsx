@@ -13,6 +13,7 @@ import VIPPackages from './screens/vip';
 import OrderItemPage from './screens/Order';
 import Policy from './screens/Policy';
 import RefundPolicy from './screens/RefundPolicy';
+import Soon from './screens/soon';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path='order' element={<OrderItemPage/>}/>
           <Route path='policy' element={<Policy/>}/>
           <Route path='refund' element={<RefundPolicy/>}/>
+          <Route path='soon' element={<Soon/>}/>
         </Routes>
         <Footer />
       </>
