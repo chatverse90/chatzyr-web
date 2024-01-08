@@ -11,7 +11,7 @@ import CryptoJS from "crypto-js";
 
 function Payments() {
 
-    function ok(){
+       async function  ok(){
         const dataToHash = {
             Key1: "fo2m38jIC74=",
          
@@ -59,7 +59,7 @@ function Payments() {
       }
     };
     
-    axios.post('https://sandbox.bankalfalah.com/HS/HS/HS', requestData)
+   await axios.post('https://sandbox.bankalfalah.com/HS/HS/HS', requestData)
       .then(response => {
         // Handle the response here
         console.log('Handshake successful:', response.data);
@@ -71,6 +71,7 @@ function Payments() {
     
     }
 ok();
+
 
 
   const min = Math.ceil(1);
