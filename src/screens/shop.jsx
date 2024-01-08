@@ -36,7 +36,7 @@ const showAlertAndRedirect = () => {
 };
   async function fetchWebDetails() {
     try {
-      const response = await fetch('https://chatzyr-ffd13b9f974e.herokuapp.com/webDetails');
+      const response = await fetch('https://chatzyrserver-a921fc0b4b47.herokuapp.com/webDetails');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
