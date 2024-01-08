@@ -1,8 +1,9 @@
+import axios from "axios";
 import React, { useState } from "react";
 import {  useLocation,useNavigate } from "react-router-dom";
 
 // import toast from "react-hot-toast";
-import axios from "axios";
+
 import $ from "jquery";
 import  Cookies from "universal-cookie";
 
