@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {  useLocation,useNavigate } from "react-router-dom";
 
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import axios from "axios";
 import $ from "jquery";
 import  Cookies from "universal-cookie";
@@ -179,7 +179,7 @@ ok();
     event.preventDefault();
 
     if (classType === null || classType === "") {
-      toast.error("Please select Class Type.");
+      // toast.error("Please select Class Type.");
     } else {
       const payload = {
         ClassType: classType,
@@ -200,7 +200,7 @@ ok();
           if (response.data.Status === true) {
             debugger;
             // this.setState({ loading: false })
-            toast.success("Successfully Added!");
+            // toast.success("Successfully Added!");
 
             // this.props.history.push('/dashboard/' + props.studentId);
             // history.push({
@@ -218,13 +218,13 @@ ok();
           } else {
             // this.setState({ loading: false })
             // window.scrollTo(0, 0);
-            toast.error(response.data.Message);
+            // toast.error(response.data.Message);
           }
         })
         .catch((error) => {
           // this.setState({ loading: false })
           // window.scrollTo(0, 0);
-          toast.error(error);
+          // toast.error(error);
         });
     }
   }
