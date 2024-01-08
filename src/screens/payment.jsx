@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {  useLocation,useNavigate } from "react-router-dom";
-import ReactLoading from "react-loading";
+
 import toast from "react-hot-toast";
 import axios from "axios";
 import $ from "jquery";
@@ -285,7 +285,7 @@ ok();
             height: "150vh",
             backgroundColor: "white",
           }}>
-          <div className='flex-loader'>
+          {/* <div className='flex-loader'>
             <ReactLoading
               type='spin'
               color='#2D933F'
@@ -293,7 +293,7 @@ ok();
               width={80}
               className='flex-item-loader'
             />
-          </div>
+          </div> */}
         </div>
       ) : (
         <>
