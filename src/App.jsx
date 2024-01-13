@@ -14,7 +14,7 @@ import OrderItemPage from './screens/Order';
 import Policy from './screens/Policy';
 import RefundPolicy from './screens/RefundPolicy';
 import Soon from './screens/soon';
-import Payments from './screens/payment';
+
 
 function App() {
   return (
@@ -29,7 +29,6 @@ function App() {
           <Route path='termsofuse' element={<TermsofUse/>}/>
           <Route path='contactus' element={<ContactUs/>}/>
           <Route path='shop' element={<Shop/>}/>
-          <Route path='payment' element={<Payments/>}/>
           <Route path='vip' element={<VIPPackages/>}/>
           <Route path='order' element={<OrderItemPage/>}/>
           <Route path='policy' element={<Policy/>}/>
