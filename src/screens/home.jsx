@@ -6,9 +6,10 @@ import VideoPlayer from '../components/videoplayer';
 import { Link } from 'react-router-dom';
 function HomePage() {
   const images = [
-    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/c4.jpg',
-    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/c5.jpg',
-    'https://raw.githubusercontent.com/chatverse90/chatverse-images/main/c6.jpg',
+    'https://raw.githubusercontent.com/chatverse90/chatzyr-web/main/src/assets/IMG-20240830-WA0013.jpg',
+    'https://raw.githubusercontent.com/chatverse90/chatzyr-web/main/src/assets/IMG-20240830-WA0023.jpg',
+    'https://raw.githubusercontent.com/chatverse90/chatzyr-web/main/src/assets/IMG-20240830-WA0024.jpg',
+    'https://raw.githubusercontent.com/chatverse90/chatzyr-web/main/src/assets/IMG-20240830-WA0022.jpg',
   ];
 
   const [openAnswer, setOpenAnswer] = useState(null);
