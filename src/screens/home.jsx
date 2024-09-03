@@ -159,7 +159,7 @@ function HomePage() {
       <div className='download'>
 
         {/* <div> */}
-        <a className="download-image" href="https://play.google.com/store/apps/dev?id=8960598395323637138">       
+        <a className="download-image" href="https://play.google.com/store/apps/details?id=com.spotflux90.chatzyeAppUpdate">       
         <img
           src="https://raw.githubusercontent.com/chatverse90/chatverse-images/main/playstore.png"
           alt="Sample Image"

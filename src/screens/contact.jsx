@@ -23,7 +23,9 @@ const ContactUs = () => {
             <div className="contact-info">
                 <div className="contact-item">
                     <FaPhone className="icon" />
-                    <p className="text">Phone: +13474671050<br />+923330688630 </p>
+                    <p className="text">Phone: +13474671050<br />
+                    {/* +923330688630 */}
+                     </p>
                 </div>
                 <div className="contact-item">
                     <FaEnvelope className="icon" />
@@ -33,10 +35,10 @@ const ContactUs = () => {
                     <FaModx className="icon" />
                     <p className="text">Report Email: Report.chatzyr@gmail.com</p>
                 </div>
-                <div className="contact-item">
+                {/* <div className="contact-item">
                     <FaMapMarker className="icon" />
                     <p className="text">47 , ST 47 SECTOR  G , ISB</p>
-                </div>
+                </div> */}
 
 
             </div>
