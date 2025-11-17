@@ -1,43 +1,38 @@
 import React from 'react';
-import Navbar from './components/navbar';
-import HomePage from './screens/home';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Report from './screens/report';
-import Footer from './components/footer';
-import Suggestion from './screens/suggestion';
-import PrivacyAndTerms from './screens/pirvacyterms';
-import TermsofUse from './screens/terms';
-import ContactUs from './screens/contact';
-import Shop from './screens/shop';
-import VIPPackages from './screens/vip';
-import OrderItemPage from './screens/Order';
-import Policy from './screens/Policy';
-import RefundPolicy from './screens/RefundPolicy';
-import Soon from './screens/soon';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import { CardAnim } from './components/Features';
+import Stats from './components/Stats';
+import Pricing from './components/Pricing';
+import FAQ from './components/FAQ';
+import Footer from './components/Footer';
+import NewsPopup from './components/NewsPopup';
+import VideoPopup from './components/VideoPopup';
+import './App.css';
+import Home from './screens/Home';
+import ChatZyrNews from './screens/News';
+import Contact from './screens/Contact';
+import NewsBlogPage from './screens/blog';
 
 function App() {
   return (
-    <BrowserRouter>
-      <>
-        <Navbar /> 
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="report" element={<Report />} />
-          <Route path="suggestion" element={<Suggestion />} />
-          <Route path='privacyterms' element={<PrivacyAndTerms/>}/>
-          <Route path='termsofuse' element={<TermsofUse/>}/>
-          <Route path='contactus' element={<ContactUs/>}/>
-          <Route path='shop' element={<Shop/>}/>
-          <Route path='vip' element={<VIPPackages/>}/>
-          <Route path='order' element={<OrderItemPage/>}/>
-          <Route path='policy' element={<Policy/>}/>
-          <Route path='refund' element={<RefundPolicy/>}/>
-          <Route path='soon' element={<Soon/>}/>
-        </Routes>
+    <Router>
+      <div className="App">
+        <NewsPopup />
+        <VideoPopup videoUrl="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/news" element={<ChatZyrNews />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<NewsBlogPage />} />
+          </Routes>
+        </main>
         <Footer />
-      </>
-    </BrowserRouter>
+      </div>
+    </Router>
   );
 }
 

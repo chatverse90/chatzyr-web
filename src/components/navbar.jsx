@@ -1,51 +1,39 @@
 import React, { useState } from 'react';
-import logo from './weblogo.png';
 import './Navbar.css';
-import { Link } from 'react-router-dom';
+import ChatZyrNews from '../screens/News';
+import chatzylogo from '../assets/chatzyr2.png'
 
-function Navbar() {
-  const [isMenuOpen, setMenuOpen] = useState(false);
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <>
-      <nav className="navbar">
-        <div className="logo-container">
-          <img src={logo} alt="Logo" className="logo1" />
-          {/* <a className="menu-link2" href="/">Chatzyr</a> */}
-          <Link className="menu-link2" to="/">Chatzyr</Link>
-        </div>
-        <div className="menu-toggle" onClick={toggleMenu}>
-          <div className={`hamburger ${isMenuOpen ? 'open' : ''}`}>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
+    <nav className="navbar">
+      <div className="container">
+        <div className="navbar-content">
+          <div className="navbar-brand">
+            {/* <h2 className="brand-text">ChatZyr</h2> */}
+            <img src={chatzylogo} alt="ChatZyr Logo" className="logo" />
           </div>
+          
+          <div className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
+            <a href="/" className="nav-link">Home</a>
+            <a href="#waitlist" className="nav-link">Waitlist</a>
+            <a href="/news" className="nav-link" component={ChatZyrNews}>News</a>
+            <a href="/contact" className="nav-link">Contact</a>
+            <button className="try-free-btn">Try for Free</button>
+          </div>
+
+          <button className="mobile-menu-btn" onClick={toggleMenu}>
+            <span className={`hamburger ${isMenuOpen ? 'active' : ''}`}></span>
+          </button>
         </div>
-        <ul className={`menu ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu} >
-          <li className="menu-item"  >
-            {/* <a className="menu-link" href="/">Home</a> */}
-            <Link className="menu-link" to="/">Home</Link>
-          </li>
-          <li className="menu-item">
-            {/* <a className="menu-link" href="/">Shop</a> */}
-            <Link className="menu-link" to="/shop">Shop</Link>
-          </li>
-          <li className="menu-item">
-            <Link className="menu-link" to="/report">Report</Link>
-            {/* <Link></Link> */}
-          </li>
-          <li className="menu-item">
-            {/* <a className="menu-link" href="/suggestion">Suggest</a> */}
-            <Link className="menu-link" to="/suggestion">Suggest</Link>
-          </li>
-        </ul>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
-}
+};
 
 export default Navbar;

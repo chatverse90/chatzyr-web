@@ -1,0 +1,206 @@
+/* Floating Button */
+.video-popup-floating-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #000000;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-popup-floating-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: #1a1a1a;
+}
+
+.video-popup-floating-btn:active {
+  transform: translateY(0);
+}
+
+.video-popup-play-icon {
+  width: 28px;
+  height: 28px;
+  color: white;
+  margin-left: 4px;
+  transition: transform 0.3s ease;
+}
+
+.video-popup-floating-btn:hover .video-popup-play-icon {
+  transform: scale(1.1);
+}
+
+/* Video Popup Overlay */
+.video-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeInOverlay 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Video Popup Container */
+.video-popup-container {
+  position: relative;
+  width: 640px;
+  height: 360px;
+  animation: slideUpScale 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes slideUpScale {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Close Button */
+.video-popup-close {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.video-popup-close:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.video-popup-close:active {
+  transform: rotate(90deg) scale(0.95);
+}
+
+.video-popup-close-icon {
+  width: 20px;
+  height: 20px;
+  color: #1a1a1a;
+  stroke-width: 2.5;
+}
+
+/* Video Wrapper */
+.video-popup-video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  background: #000;
+}
+
+.video-popup-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .video-popup-floating-btn {
+    width: 56px;
+    height: 56px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .video-popup-play-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .video-popup-container {
+    width: 90vw;
+    height: calc(90vw * 9 / 16);
+    max-width: 640px;
+    max-height: 360px;
+  }
+
+  .video-popup-close {
+    top: -3rem;
+    width: 36px;
+    height: 36px;
+  }
+
+  .video-popup-close-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-popup-floating-btn {
+    width: 52px;
+    height: 52px;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .video-popup-play-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .video-popup-container {
+    width: 95vw;
+    height: calc(95vw * 9 / 16);
+  }
+}
+
+/* Animation for smooth appearance */
+.video-popup-overlay {
+  animation: fadeInOverlay 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-popup-container {
+  animation: slideUpScale 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
