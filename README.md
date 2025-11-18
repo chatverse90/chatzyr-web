@@ -1,2 +1,1 @@
-ChatzyrWeb
-website
+ChatzyrWeb website
