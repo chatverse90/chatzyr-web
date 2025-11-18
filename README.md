@@ -1,3 +1,2 @@
-s# ChatzyrWeb
+ChatzyrWeb
 website
-s
