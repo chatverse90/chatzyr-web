@@ -22,7 +22,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/news" element={<ChatZyrNews />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/blog" element={<NewsBlogPage />} />
+            <Route path="/blog/:id" element={<NewsBlogPage />} />
           </Routes>
         </main>
         <Footer />
