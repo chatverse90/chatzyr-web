@@ -9,6 +9,7 @@ import Home from './screens/home';
 import ChatZyrNews from './screens/News';
 import Contact from './screens/contact';
 import NewsBlogPage from './screens/blog';
+import AddNewsPage from './screens/addnewspage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/news" element={<ChatZyrNews />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog/:id" element={<NewsBlogPage />} />
+            <Route path='/addnews' element={ <AddNewsPage />} />
           </Routes>
         </main>
         <Footer />
