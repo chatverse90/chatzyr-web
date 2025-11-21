@@ -8,6 +8,10 @@ const ChatZyrNews = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [copied, setCopied] = useState(false);
+  const [shareData, setShareData] = useState(null);
+
+
+
   const formatTimeAgo = (timestamp) => {
     if (!timestamp) return "";
 
@@ -66,12 +70,31 @@ const ChatZyrNews = () => {
     fetchNews();
   }, []);
 
+  const handleShare = async (item) => {
 
-  const copyToClipboard = (text) => {
-    navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+    const sharePayload = {
+      title: item.title,
+      text: item.description || item.title,
+      url: `https://chatzyr.net${item.shareableLink || `/blog/${item._id}`}`
+    };
+
+    // If browser supports native Web Share API (with files/images)
+    if (navigator.share) {
+      try {
+        await navigator.share(sharePayload);
+        return;
+      } catch (err) {
+        console.log("Native share failed, fallback will show.", err);
+      }
+    }
+
+    // Fallback: open custom share modal
+    setShareData({
+      ...sharePayload,
+      image: item.picture
+    });
   };
+
   // Get unique categories from news items
   const categories = ["All Content", ...new Set(newsItems.map(item => item.tag))];
 
@@ -202,7 +225,7 @@ const ChatZyrNews = () => {
                 return (
                   <article
                     key={item._id}
-                    className={`group relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-gray-500/20 ${size === 'large' ? 'md:col-span-2 md:row-span-2' :
+                    className={`group relative overflow-hidden rounded-3xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-gray-500/20 ${size === 'large' ? 'md:col-span-2 md:row-span-2' :
                       size === 'medium' ? 'md:col-span-1 md:row-span-2' :
                         'md:col-span-1 md:row-span-1'
                       }`}
@@ -252,7 +275,7 @@ const ChatZyrNews = () => {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center text-white/90 text-sm font-medium">
                             <span>
-                              <a href={item.shareableLink || `/blog/${item._id}`}>Read article</a>
+                              <a href={item.shareableLink || `/blog/${item._id}`} onClick={(e) => e.stopPropagation()}>Read article</a>
                             </span>
                             <svg className="w-4 h-4 ml-2 transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
@@ -268,18 +291,16 @@ const ChatZyrNews = () => {
                             </button>
                             {/* shareableLink */}
                             <button
-                              onClick={() => copyToClipboard(`chatzyr.net${item.shareableLink || `/blog/${item._id}`}`)}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                console.log("SHARE BUTTON CLICKED");
+                                handleShare(item);
+                              }}
+
                               className="p-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 hover:bg-white/30 transition-colors duration-200"
                             >
-                              {copied ? (
-                                <span className="text-white text-xs font-medium">Copied!</span>
-                              ) : (
-                                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
-                                </svg>
-                              )}
+                              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" /> </svg>
                             </button>
-
 
                           </div>
                         </div>
@@ -327,6 +348,96 @@ const ChatZyrNews = () => {
               }
             `}
           </style>
+        </div>
+      )}
+
+
+      {shareData && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[9999]">
+          <div className="bg-white rounded-2xl shadow-2xl w-11/12 md:w-1/3 p-6 relative">
+
+            {/* Close */}
+            <button
+              className="absolute top-4 right-4 text-gray-600 hover:text-black"
+              onClick={() => setShareData(null)}
+            >
+              ✕
+            </button>
+
+            {/* Preview Image */}
+            <img
+              src={shareData.image}
+              alt="share preview"
+              className="w-full h-48 object-cover rounded-xl mb-4"
+            />
+
+            {/* Title */}
+            <h3 className="text-xl font-bold text-gray-900 mb-2">
+              {shareData.title}
+            </h3>
+
+            {/* Link */}
+            <p className="text-sm text-blue-600 underline break-all mb-4">
+              {shareData.url}
+            </p>
+
+            {/* Share Buttons */}
+            <div className="grid grid-cols-3 gap-3">
+
+              {/* Copy */}
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(shareData.url);
+                  alert("Link copied!");
+                }}
+                className="flex flex-col items-center p-3 bg-gray-100 rounded-xl hover:bg-gray-200"
+              >
+                📋
+                <span className="text-xs mt-1">Copy</span>
+              </button>
+
+              {/* WhatsApp */}
+              <a
+                href={`https://wa.me/?text=${encodeURIComponent(shareData.title + "\n" + shareData.url)}`}
+                target="_blank"
+                className="flex flex-col items-center p-3 bg-gray-100 rounded-xl hover:bg-gray-200"
+              >
+                💬
+                <span className="text-xs mt-1">WhatsApp</span>
+              </a>
+
+              {/* Twitter */}
+              <a
+                href={`https://x.com/intent/tweet?text=${encodeURIComponent(shareData.title)}&url=${encodeURIComponent(shareData.url)}`}
+                target="_blank"
+                className="flex flex-col items-center p-3 bg-gray-100 rounded-xl hover:bg-gray-200"
+              >
+                🐦
+                <span className="text-xs mt-1">Twitter</span>
+              </a>
+
+              {/* Facebook */}
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareData.url)}`}
+                target="_blank"
+                className="flex flex-col items-center p-3 bg-gray-100 rounded-xl hover:bg-gray-200"
+              >
+                👍
+                <span className="text-xs mt-1">Facebook</span>
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareData.url)}&title=${encodeURIComponent(shareData.title)}`}
+                target="_blank"
+                className="flex flex-col items-center p-3 bg-gray-100 rounded-xl hover:bg-gray-200"
+              >
+                💼
+                <span className="text-xs mt-1">LinkedIn</span>
+              </a>
+
+            </div>
+          </div>
         </div>
       )}
     </div>
