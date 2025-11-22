@@ -45,7 +45,8 @@ export default function MobileAppCTA() {
 
           {/* Google Play Button */}
           <a
-            href="#"
+            href="https://play.google.com/store/apps/details?id=com.spotflux90.chatzyeAppUpdate"
+            target="_blank"
             className="group relative flex items-center gap-3 bg-white text-black px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 hover:-translate-y-0.5 w-full sm:w-auto max-w-xs overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-pink-500/0 to-purple-600/0 group-hover:from-orange-500/15 group-hover:via-pink-500/15 group-hover:to-purple-600/15 transition-all duration-500"></div>

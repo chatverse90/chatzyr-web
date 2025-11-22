@@ -12,6 +12,13 @@
   z-index: 1;
 }
 
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+
 .stats-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
