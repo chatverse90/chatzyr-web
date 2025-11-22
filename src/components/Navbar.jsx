@@ -21,7 +21,7 @@ const Navbar = () => {
           
           <div className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
             <a href="/" className="nav-link">Home</a>
-            <a href="#waitlist" className="nav-link">Waitlist</a>
+            {/* <a href="#waitlist" className="nav-link">Waitlist</a> */}
             <a href="/news" className="nav-link" component={ChatZyrNews}>News</a>
             <a href="/contact" className="nav-link">Contact</a>
             <a href="#homecta_ID"
