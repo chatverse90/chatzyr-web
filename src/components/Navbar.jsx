@@ -24,7 +24,9 @@ const Navbar = () => {
             <a href="#waitlist" className="nav-link">Waitlist</a>
             <a href="/news" className="nav-link" component={ChatZyrNews}>News</a>
             <a href="/contact" className="nav-link">Contact</a>
-            <button className="try-free-btn">Try for Free</button>
+            <a href="#homecta_ID"
+            // target="_blank"
+            className="try-free-btn">Try for Free</a>
           </div>
 
           <button className="mobile-menu-btn" onClick={toggleMenu}>

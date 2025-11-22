@@ -4,7 +4,7 @@ import imagr from '../assets/bgred.avif'
 
 export default function MobileAppCTA() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-16">
+    <section id="homecta_ID"  className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-16">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
