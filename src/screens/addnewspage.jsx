@@ -99,8 +99,8 @@ export default function AddNewsPage() {
           <input
             value={pin}
             onChange={(e) => setPin(e.target.value)}
-            maxLength={5}
-            placeholder="Enter 5-digit PIN"
+            maxLength={10}
+            placeholder="Enter digit PIN"
             style={styles.input}
           />
           <button onClick={handlePinSubmit} style={styles.button}>
