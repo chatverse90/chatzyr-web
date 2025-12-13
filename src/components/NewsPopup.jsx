@@ -4,43 +4,71 @@ import './NewsPopup.css';
 
 const NewsPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [latestNews, setLatestNews] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  // Latest news data - using the first item from News.jsx as the latest
-  const latestNews = {
-    id: 1,
-    title: "Breaking: Major Tech Announcement Shakes Industry",
-    category: "Technology",
-    image: "https://about.fb.com/wp-content/uploads/2023/09/GettyImages-686732223.jpg",
-    date: "2 hours ago",
-    route: '/blog'
-  };
-
+  // Fetch news from API
   useEffect(() => {
-    // Show popup when website first opens (once per browser session)
-    // Check if popup was already shown in this session
-    const hasSeenPopup = sessionStorage.getItem('newsPopupShown');
-    
-    if (!hasSeenPopup) {
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-        sessionStorage.setItem('newsPopupShown', 'true');
-      }, 500); // Small delay for better UX
+    const fetchNews = async () => {
+      try {
+        const response = await fetch('https://chatzyrserver-a921fc0b4b47.herokuapp.com/getnews');
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch news');
+        }
+        
+        const result = await response.json();
+        
+        // API returns { success: true, count: 156, data: Array(146) }
+        if (result.success && result.data && result.data.length > 0) {
+          // Get the first news item from the data array
+          const newsItem = result.data[0];
+          setLatestNews(newsItem);
+        }
+        
+        setLoading(false);
+      } catch (err) {
+        console.error('Error fetching news:', err);
+        setError(err.message);
+        setLoading(false);
+      }
+    };
 
-      return () => clearTimeout(timer);
-    }
+    fetchNews();
   }, []);
+
+  // Show popup logic
+  useEffect(() => {
+    if (!loading && latestNews) {
+      const hasSeenPopup = sessionStorage.getItem('newsPopupShown');
+      
+      if (!hasSeenPopup) {
+        const timer = setTimeout(() => {
+          setIsOpen(true);
+          sessionStorage.setItem('newsPopupShown', 'true');
+        }, 500);
+
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [loading, latestNews]);
 
   const handleClose = () => {
     setIsOpen(false);
   };
 
   const handleReadMore = () => {
-    navigate(latestNews.route);
+    // Open the shareablelink in a new tab
+
+    navigate('/blog/' + latestNews._id, '_blank');
+
     setIsOpen(false);
   };
 
-  if (!isOpen) return null;
+  // Don't render if popup is closed, still loading, or there's an error
+  if (!isOpen || loading || error || !latestNews) return null;
 
   return (
     <div className="news-popup-overlay" onClick={handleClose}>
@@ -81,26 +109,30 @@ const NewsPopup = () => {
           <div className="news-popup-card">
             <div className="news-popup-image-container">
               <img 
-                src={latestNews.image} 
+                src={latestNews.picture || 'https://via.placeholder.com/600x400'} 
                 alt={latestNews.title}
                 className="news-popup-image"
               />
               <div className="news-popup-overlay-gradient"></div>
               
               {/* Category Badge */}
-              <div className="news-popup-badge">
-                <span className="inline-flex items-center bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-xs font-semibold border border-white/30 shadow-lg">
-                  <div className="w-2 h-2 rounded-full mr-2 bg-red-500"></div>
-                  {latestNews.category}
-                </span>
-              </div>
+              {latestNews.tag && (
+                <div className="news-popup-badge">
+                  <span className="inline-flex items-center bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-xs font-semibold border border-white/30 shadow-lg">
+                    <div className="w-2 h-2 rounded-full mr-2 bg-red-500"></div>
+                    {latestNews.tag}
+                  </span>
+                </div>
+              )}
 
               {/* Date */}
-              <div className="news-popup-date">
-                <div className="bg-black/20 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-medium border border-white/20">
-                  {latestNews.date}
+              {latestNews.updatedat && (
+                <div className="news-popup-date">
+                  <div className="bg-black/20 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-medium border border-white/20">
+                    {new Date(latestNews.updatedat).toLocaleDateString()}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* News Content */}
@@ -146,4 +178,3 @@ const NewsPopup = () => {
 };
 
 export default NewsPopup;
-

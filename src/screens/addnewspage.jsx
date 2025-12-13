@@ -14,7 +14,7 @@ export default function AddNewsPage() {
   const [loading, setLoading] = useState(false);
   const [uploading, setUploading] = useState(false);
 
-  const SECRET_PIN = "92741";
+  const SECRET_PIN = "27031994";
 
   const handlePinSubmit = () => {
     if (pin === SECRET_PIN) {

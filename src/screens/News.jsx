@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import axios from 'axios';
 
 const ChatZyrNews = () => {
@@ -7,12 +7,11 @@ const ChatZyrNews = () => {
   const [latestTime, setLatestTime] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [copied, setCopied] = useState(false);
   const [shareData, setShareData] = useState(null);
+  const [displayCount, setDisplayCount] = useState(12); // Initially show 12 items
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
 
-
-
-  const formatTimeAgo = (timestamp) => {
+  const formatTimeAgo = useCallback((timestamp) => {
     if (!timestamp) return "";
 
     const now = new Date();
@@ -34,7 +33,7 @@ const ChatZyrNews = () => {
     if (days < 7) return "Few days ago";
 
     return `${days} days ago`;
-  };
+  }, []);
 
   // Fetch news from API
   useEffect(() => {
@@ -52,12 +51,9 @@ const ChatZyrNews = () => {
         const latest = items.reduce((latest, item) => {
           const curr = new Date(item.updatedAt);
           return curr > latest ? curr : latest;
-        }, new Date(0)); // start with oldest possible date
+        }, new Date(0));
 
-        // Set formatted OR raw date (your choice)
-        setLatestTime(formatTimeAgo(latest)); // formatted
-        // setLatestTime(latest);  // raw Date object
-
+        setLatestTime(formatTimeAgo(latest));
         setError(null);
       } catch (err) {
         setError(err.message);
@@ -68,17 +64,17 @@ const ChatZyrNews = () => {
     };
 
     fetchNews();
-  }, []);
+  }, [formatTimeAgo]);
 
-  const handleShare = async (item) => {
-
+  const handleShare = useCallback(async (item, e) => {
+    e.stopPropagation();
+    
     const sharePayload = {
       title: item.title,
       text: item.description || item.title,
       url: `https://chatzyr.net${item.shareableLink || `/blog/${item._id}`}`
     };
 
-    // If browser supports native Web Share API (with files/images)
     if (navigator.share) {
       try {
         await navigator.share(sharePayload);
@@ -88,26 +84,58 @@ const ChatZyrNews = () => {
       }
     }
 
-    // Fallback: open custom share modal
     setShareData({
       ...sharePayload,
       image: item.picture
     });
-  };
+  }, []);
+
+  const handleArticleClick = useCallback((item) => {
+    const url = item.shareableLink || `/blog/${item._id}`;
+    window.open(url, '_blank');
+  }, []);
+
+  const handleLoadMore = useCallback(() => {
+    setIsLoadingMore(true);
+    setTimeout(() => {
+      setDisplayCount(prev => prev + 12);
+      setIsLoadingMore(false);
+    }, 300);
+  }, []);
 
   // Get unique categories from news items
-  const categories = ["All Content", ...new Set(newsItems.map(item => item.tag))];
+  const categories = useMemo(() => 
+    ["All Content", ...new Set(newsItems.map(item => item.tag))],
+    [newsItems]
+  );
 
-  const filteredNews = selectedCategory === "All Content"
-    ? newsItems
-    : newsItems.filter(item => item.tag === selectedCategory);
+  const filteredNews = useMemo(() => {
+    const filtered = selectedCategory === "All Content"
+      ? newsItems
+      : newsItems.filter(item => item.tag === selectedCategory);
+    
+    return filtered.slice(0, displayCount);
+  }, [newsItems, selectedCategory, displayCount]);
+
+  const totalFilteredCount = useMemo(() => {
+    return selectedCategory === "All Content"
+      ? newsItems.length
+      : newsItems.filter(item => item.tag === selectedCategory).length;
+  }, [newsItems, selectedCategory]);
+
+  const hasMore = filteredNews.length < totalFilteredCount;
 
   // Assign sizes to news items for grid layout
-  const getItemSize = (index) => {
+  const getItemSize = useCallback((index) => {
     if (index === 0) return 'large';
     if (index === 1 || index === 2) return 'medium';
     return 'small';
-  };
+  }, []);
+
+  // Reset display count when category changes
+  useEffect(() => {
+    setDisplayCount(12);
+  }, [selectedCategory]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900 mt-20 relative overflow-hidden">
@@ -178,9 +206,12 @@ const ChatZyrNews = () => {
           {/* Results count */}
           <div className="mt-6 flex items-center justify-between">
             <div className="text-gray-600">
-              <span className="font-semibold text-gray-900">{filteredNews.length}</span> articles found
+              <span className="font-semibold text-gray-900">{totalFilteredCount}</span> articles found
               {selectedCategory !== "All Content" && (
                 <span className="ml-2">in <span className="font-medium text-red-600">{selectedCategory}</span></span>
+              )}
+              {filteredNews.length < totalFilteredCount && (
+                <span className="ml-2 text-sm text-gray-500">(showing {filteredNews.length})</span>
               )}
             </div>
             <div className="flex items-center space-x-2 text-gray-500">
@@ -225,7 +256,8 @@ const ChatZyrNews = () => {
                 return (
                   <article
                     key={item._id}
-                    className={`group relative overflow-hidden rounded-3xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-gray-500/20 ${size === 'large' ? 'md:col-span-2 md:row-span-2' :
+                    onClick={() => handleArticleClick(item)}
+                    className={`group relative overflow-hidden rounded-3xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-gray-500/20 cursor-pointer ${size === 'large' ? 'md:col-span-2 md:row-span-2' :
                       size === 'medium' ? 'md:col-span-1 md:row-span-2' :
                         'md:col-span-1 md:row-span-1'
                       }`}
@@ -238,6 +270,7 @@ const ChatZyrNews = () => {
                         src={item.picture}
                         alt={item.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy"
                       />
                     </div>
 
@@ -248,7 +281,6 @@ const ChatZyrNews = () => {
                         {item.tag}
                       </span>
                     </div>
-
 
                     <div className="absolute top-4 right-4 z-20">
                       <div className="bg-black/20 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-medium border border-white/20 flex items-center gap-1">
@@ -274,9 +306,7 @@ const ChatZyrNews = () => {
                       <div className="opacity-0 group-hover:opacity-100 transition-all duration-300">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center text-white/90 text-sm font-medium">
-                            <span>
-                              <a href={item.shareableLink || `/blog/${item._id}`} onClick={(e) => e.stopPropagation()}>Read article</a>
-                            </span>
+                            <span>Read article</span>
                             <svg className="w-4 h-4 ml-2 transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                             </svg>
@@ -284,31 +314,30 @@ const ChatZyrNews = () => {
 
                           <div className="flex space-x-2">
                             {/* heart icon */}
-                            <button className="p-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 hover:bg-white/30 transition-colors duration-200">
+                            <button 
+                              onClick={(e) => e.stopPropagation()}
+                              className="p-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 hover:bg-white/30 transition-colors duration-200"
+                            >
                               <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                               </svg>
                             </button>
                             {/* shareableLink */}
                             <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                console.log("SHARE BUTTON CLICKED");
-                                handleShare(item);
-                              }}
-
+                              onClick={(e) => handleShare(item, e)}
                               className="p-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 hover:bg-white/30 transition-colors duration-200"
                             >
-                              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" /> </svg>
+                              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+                              </svg>
                             </button>
-
                           </div>
                         </div>
                       </div>
                     </div>
 
                     {/* Shine effect on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 z-30"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 z-30 pointer-events-none"></div>
                   </article>
                 );
               })}
@@ -318,25 +347,41 @@ const ChatZyrNews = () => {
       )}
 
       {/* Load More Button */}
-      {!loading && !error && filteredNews.length > 0 && (
+      {!loading && !error && hasMore && (
         <div className="text-center pb-16 relative z-10">
-          <button className="group relative inline-flex items-center justify-center overflow-hidden bg-gradient-to-r from-gray-900 to-black text-white px-8 py-4 rounded-full font-semibold transition-all duration-500 shadow-md hover:shadow-xl hover:shadow-gray-500/30 border border-gray-800 transform hover:-translate-y-1 hover:scale-[1.03] active:scale-95">
+          <button 
+            onClick={handleLoadMore}
+            disabled={isLoadingMore}
+            className="group relative inline-flex items-center justify-center overflow-hidden bg-gradient-to-r from-gray-900 to-black text-white px-8 py-4 rounded-full font-semibold transition-all duration-500 shadow-md hover:shadow-xl hover:shadow-gray-500/30 border border-gray-800 transform hover:-translate-y-1 hover:scale-[1.03] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
             <span className="absolute inset-0 bg-gradient-to-r from-gray-600/0 via-gray-400/10 to-gray-600/0 opacity-0 group-hover:opacity-100 animate-[shine_1.2s_ease-in-out] rounded-full"></span>
             <span className="relative z-10 flex items-center gap-2">
-              Load More Stories
-              <svg
-                className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-1.5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M5 12h14M12 5l7 7-7 7"
-                />
-              </svg>
+              {isLoadingMore ? (
+                <>
+                  <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Loading...
+                </>
+              ) : (
+                <>
+                  Load More Stories
+                  <svg
+                    className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-1.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 12h14M12 5l7 7-7 7"
+                    />
+                  </svg>
+                </>
+              )}
             </span>
           </button>
 
@@ -351,12 +396,10 @@ const ChatZyrNews = () => {
         </div>
       )}
 
-
+      {/* Share Modal */}
       {shareData && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[9999]">
           <div className="bg-white rounded-2xl shadow-2xl w-11/12 md:w-1/3 p-6 relative">
-
-            {/* Close */}
             <button
               className="absolute top-4 right-4 text-gray-600 hover:text-black"
               onClick={() => setShareData(null)}
@@ -364,27 +407,21 @@ const ChatZyrNews = () => {
               ✕
             </button>
 
-            {/* Preview Image */}
             <img
               src={shareData.image}
               alt="share preview"
               className="w-full h-48 object-cover rounded-xl mb-4"
             />
 
-            {/* Title */}
             <h3 className="text-xl font-bold text-gray-900 mb-2">
               {shareData.title}
             </h3>
 
-            {/* Link */}
             <p className="text-sm text-blue-600 underline break-all mb-4">
               {shareData.url}
             </p>
 
-            {/* Share Buttons */}
             <div className="grid grid-cols-3 gap-3">
-
-              {/* Copy */}
               <button
                 onClick={() => {
                   navigator.clipboard.writeText(shareData.url);
@@ -396,46 +433,45 @@ const ChatZyrNews = () => {
                 <span className="text-xs mt-1">Copy</span>
               </button>
 
-              {/* WhatsApp */}
               <a
                 href={`https://wa.me/?text=${encodeURIComponent(shareData.title + "\n" + shareData.url)}`}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex flex-col items-center p-3 bg-gray-100 rounded-xl hover:bg-gray-200"
               >
                 💬
                 <span className="text-xs mt-1">WhatsApp</span>
               </a>
 
-              {/* Twitter */}
               <a
                 href={`https://x.com/intent/tweet?text=${encodeURIComponent(shareData.title)}&url=${encodeURIComponent(shareData.url)}`}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex flex-col items-center p-3 bg-gray-100 rounded-xl hover:bg-gray-200"
               >
                 🐦
                 <span className="text-xs mt-1">Twitter</span>
               </a>
 
-              {/* Facebook */}
               <a
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareData.url)}`}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex flex-col items-center p-3 bg-gray-100 rounded-xl hover:bg-gray-200"
               >
                 👍
                 <span className="text-xs mt-1">Facebook</span>
               </a>
 
-              {/* LinkedIn */}
               <a
                 href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareData.url)}&title=${encodeURIComponent(shareData.title)}`}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex flex-col items-center p-3 bg-gray-100 rounded-xl hover:bg-gray-200"
               >
                 💼
                 <span className="text-xs mt-1">LinkedIn</span>
               </a>
-
             </div>
           </div>
         </div>

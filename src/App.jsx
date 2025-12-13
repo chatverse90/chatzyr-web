@@ -16,7 +16,7 @@ function App() {
     <Router>
       <div className="App">
         <NewsPopup />
-        <VideoPopup videoUrl="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
+        {/* <VideoPopup videoUrl="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" /> */}
         <Navbar />
         <main>
           <Routes>

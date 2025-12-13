@@ -61,8 +61,8 @@ export default function NewsBlogPage() {
   if (loading || !article) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-black/10 backdrop-blur-sm">
-      <div className="w-10 h-10 border-4 border-black/20 border-t-black rounded-full animate-spin"></div>
-    </div>
+        <div className="w-10 h-10 border-4 border-black/20 border-t-black rounded-full animate-spin"></div>
+      </div>
     );
   }
 
@@ -76,63 +76,90 @@ export default function NewsBlogPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <main className="max-w-4xl mx-auto px-6 py-32">
-        <article className="bg-white rounded-lg shadow-xl p-8 md:p-12">
-          {/* Category */}
-          <span
-            className="inline-block text-white text-sm font-semibold px-4 py-1 rounded-full mb-4"
-            style={{
-              background:
-                "linear-gradient(135deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%)",
-            }}
-          >
-            {article.tag || "News"}
-          </span>
-
-          {/* Title */}
-          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4 leading-tight">
-            {title}
-          </h1>
-
-          {/* Subtitle (Optional - If you don’t have one, remove this) */}
-          {article.subtitle && (
-            <p className="text-xl text-gray-600 mb-6 italic">
-              {article.subtitle}
-            </p>
+        <article className="bg-white rounded-lg shadow-xl overflow-hidden">
+          {/* Featured Image */}
+          {article.picture && (
+            <div className="relative w-full h-96 overflow-hidden">
+              <img
+                src={article.picture}
+                alt={title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              
+              {/* Category Badge on Image */}
+              <span
+                className="absolute top-6 left-6 inline-block text-white text-sm font-semibold px-4 py-2 rounded-full backdrop-blur-sm"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%)",
+                }}
+              >
+                {article.tag || "News"}
+              </span>
+            </div>
           )}
 
-          {/* Author Info */}
-          <div className="flex items-center gap-4 py-6 border-t border-b border-gray-200 mb-8">
-            <div
-              className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg"
-              style={{
-                background:
-                  "linear-gradient(135deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%)",
-              }}
-            >
-              CT
-            </div>
-            <div className="flex-1">
-              <h4 className="font-semibold text-black">Chatzyr Team</h4>
-              <div className="flex items-center gap-4 text-sm text-gray-600 mt-1">
-                <span className="flex items-center gap-1">
-                  <Calendar className="w-4 h-4" />
-                  {date}
-                </span>
-                <span className="flex items-center gap-1">
-                  <Clock className="w-4 h-4" />
-                  {readTime}
-                </span>
+          <div className="p-8 md:p-12">
+            {/* Category (if no image) */}
+            {!article.picture && (
+              <span
+                className="inline-block text-white text-sm font-semibold px-4 py-1 rounded-full mb-4"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%)",
+                }}
+              >
+                {article.tag || "News"}
+              </span>
+            )}
+
+            {/* Title */}
+            <h1 className="text-4xl md:text-5xl font-bold text-black mb-4 leading-tight">
+              {title}
+            </h1>
+
+            {/* Subtitle (Optional - If you don't have one, remove this) */}
+            {article.subtitle && (
+              <p className="text-xl text-gray-600 mb-6 italic">
+                {article.subtitle}
+              </p>
+            )}
+
+            {/* Author Info */}
+            <div className="flex items-center gap-4 py-6 border-t border-b border-gray-200 mb-8">
+              <div
+                className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%)",
+                }}
+              >
+                CT
+              </div>
+              <div className="flex-1">
+                <h4 className="font-semibold text-black">Chatzyr Team</h4>
+                <div className="flex items-center gap-4 text-sm text-gray-600 mt-1">
+                  <span className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    {date}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Clock className="w-4 h-4" />
+                    {readTime}
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Article Content */}
-          <div className="prose prose-lg max-w-none">
-            {paragraphs.map((p, index) => (
-              <p key={index} className="text-gray-700 mb-6 leading-relaxed">
-                {p}
-              </p>
-            ))}
+            {/* Article Content */}
+            <div className="prose prose-lg max-w-none">
+              {paragraphs.map((p, index) => (
+                <p key={index} className="text-gray-700 mb-6 leading-relaxed">
+                  {p}
+                </p>
+              ))}
+            </div>
           </div>
         </article>
 
@@ -147,16 +174,35 @@ export default function NewsBlogPage() {
                 onClick={() => (window.location.href = `/blog/${a._id}`)}
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
               >
+                {/* Suggested Article Image */}
+                {a.picture && (
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={a.picture}
+                      alt={a.title}
+                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                    />
+                    <div className="absolute top-3 left-3">
+                      <span className="inline-block bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-semibold px-3 py-1 rounded-full">
+                        {a.tag}
+                      </span>
+                    </div>
+                  </div>
+                )}
+
                 <div className="p-6">
-                  <span className="inline-block bg-gray-200 text-gray-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">
-                    {a.tag}
-                  </span>
+                  {/* Category badge only if no image */}
+                  {!a.picture && (
+                    <span className="inline-block bg-gray-200 text-gray-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                      {a.tag}
+                    </span>
+                  )}
 
                   <h3 className="text-xl font-bold text-black mb-3 hover:bg-gradient-to-r hover:from-orange-500 hover:via-pink-500 hover:to-purple-500 hover:bg-clip-text hover:text-transparent transition-all">
                     {a.title}
                   </h3>
 
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-2">
                     {a.description || "Click to read more..."}
                   </p>
 
