@@ -8,7 +8,7 @@ const ChatZyrNews = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [shareData, setShareData] = useState(null);
-  const [displayCount, setDisplayCount] = useState(12); // Initially show 12 items
+  const [displayCount, setDisplayCount] = useState(11); // Initially show 12 items
   const [isLoadingMore, setIsLoadingMore] = useState(false);
 
   const formatTimeAgo = useCallback((timestamp) => {
@@ -134,7 +134,7 @@ const ChatZyrNews = () => {
 
   // Reset display count when category changes
   useEffect(() => {
-    setDisplayCount(12);
+    setDisplayCount(11);
   }, [selectedCategory]);
 
   return (
