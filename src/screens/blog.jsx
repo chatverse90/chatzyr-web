@@ -73,6 +73,7 @@ export default function NewsBlogPage() {
   const date = formatDate(article.updatedAt);
   const readTime = calculateReadTime(content);
 
+  const keywords = Array.isArray(article.keywords) ? article.keywords : [];
   return (
     <div className="min-h-screen bg-gray-50">
       <main className="max-w-4xl mx-auto px-6 py-32">
@@ -86,7 +87,7 @@ export default function NewsBlogPage() {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              
+
               {/* Category Badge on Image */}
               <span
                 className="absolute top-6 left-6 inline-block text-white text-sm font-semibold px-4 py-2 rounded-full backdrop-blur-sm"
@@ -118,6 +119,20 @@ export default function NewsBlogPage() {
             <h1 className="text-4xl md:text-5xl font-bold text-black mb-4 leading-tight">
               {title}
             </h1>
+            {/* Keywords */}
+            {keywords.length > 0 && (
+              <div className="flex flex-wrap gap-2 mt-4 mb-6">
+                {keywords.map((keyword, index) => (
+                  <span
+                    key={index}
+                    className="text-xs font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-black hover:text-white transition-all cursor-default"
+                  >
+                    #{keyword}
+                  </span>
+                ))}
+              </div>
+            )}
+
 
             {/* Subtitle (Optional - If you don't have one, remove this) */}
             {article.subtitle && (

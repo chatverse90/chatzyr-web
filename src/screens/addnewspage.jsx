@@ -13,6 +13,7 @@ export default function AddNewsPage() {
 
   const [loading, setLoading] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const [keywords, setKeywords] = useState("");
 
   const SECRET_PIN = "27031994";
 
@@ -64,6 +65,10 @@ export default function AddNewsPage() {
       title,
       content,
       tag,
+      keywords: keywords
+        .split(",")
+        .map((k) => k.trim())
+        .filter((k) => k.length > 0),
     };
 
     try {
@@ -82,6 +87,7 @@ export default function AddNewsPage() {
       setTitle("");
       setContent("");
       setTag("");
+      setKeywords("");
     } catch (err) {
       alert("Failed to add news.");
       console.log(err);
@@ -166,6 +172,13 @@ export default function AddNewsPage() {
             value={tag}
             onChange={(e) => setTag(e.target.value)}
           />
+          <input
+            style={styles.input}
+            placeholder="Keywords (comma separated e.g. ai, technology, startup)"
+            value={keywords}
+            onChange={(e) => setKeywords(e.target.value)}
+          />
+
 
           {/* Disable until:
               ❌ uploading is false
