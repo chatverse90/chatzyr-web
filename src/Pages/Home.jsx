@@ -18,18 +18,18 @@ const Home = () => {
 
             {/* HERO SECTION */}
             <HeroBanner1
-                subtitle="<span>New!</span> Chatyzyr"
-                title="Connect Instantly with Real-Time Group & Private Chats."
-                content="Chatyzyr is a modern communication platform built for real-time conversations. Chat freely with friends, teams, and communities through instant messaging, voice notes, media sharing, and interactive group chats—securely and seamlessly."
-                btnname="Get Started"
+                subtitle="<span>Welcome to</span> Chatzyr"
+                title="Connect, Chat, and Stream Together"
+                content="Chatzyr is a revolutionary mobile application that brings people together through social connections, direct messages, group chats, and group streams. Experience seamless communication and real-time streaming in one powerful platform."
+                btnname="Download App"
                 btnurl="/contact"
-                btntwo="Learn More"
-                btn2url="/about"
+                btntwo="Explore Features"
+                btn2url="/features"
                 cusimg="/assets/images/intro/introProfileThumb1_1.png"
-                cusnumber="2,291"
+                cusnumber="2M+"
                 cuscontent="Active Users"
                 rating="4.8/5"
-                ratingcon="User Rating"
+                ratingcon="App Store Rating"
                 img="/assets/images/mocks/mock1.png"
             ></HeroBanner1>
 
@@ -40,15 +40,15 @@ const Home = () => {
             <About1
                 img1="/assets/images/about/aboutThumb1_1.png"
                 img2="/assets/images/about/aboutThumb1_2.png"
-                subtitle="About Our App"
-                title="A Modern Social Platform for Real-Time Chat & Community Engagement"
-                content="Chatyzyr powers fast, secure, and engaging conversations. Whether you're creating community groups, coordinating with teammates, or simply chatting with friends, Chatyzyr makes communication seamless and enjoyable."
+                subtitle="About Chatzyr"
+                title="Your All-in-One Social Communication Platform"
+                content="Chatzyr revolutionizes how people connect and communicate. Whether you're sending direct messages, participating in group chats, or streaming live with friends, our platform provides a seamless, secure, and engaging experience for all your social interactions."
                 FeatureList={[
-                    "Instant group chat and private messaging.",
-                    "Share photos, videos, documents, and voice notes.",
-                    "Built on scalable and secure cloud infrastructure."
+                    "Secure direct messaging with end-to-end encryption.",
+                    "Dynamic group chats with real-time synchronization.",
+                    "Live group streaming with HD quality video."
                 ]}
-                btnname="Discover More"
+                btnname="Learn More"
                 btnurl="/about"
             />
 
@@ -57,19 +57,19 @@ const Home = () => {
 
             {/* WHY CHOOSE US */}
             <Choose1
-                subtitle="Why Choose Chatyzyr"
-                title="Designed for Fast, Secure & Meaningful Conversations"
-                content="Chatyzyr provides a messaging experience built around speed, simplicity, and connection. Stay in sync with your groups, collaborate instantly, and enjoy an intuitive, user-friendly chat environment."
+                subtitle="Why Choose Chatzyr"
+                title="Designed for Modern Social Communication"
+                content="Chatzyr combines cutting-edge technology with intuitive design to deliver the best social communication experience. We prioritize user privacy, seamless connectivity, and rich features that make staying in touch effortless and enjoyable."
                 FeatureList={[
-                    "Clean and intuitive user interface.",
-                    "Optimized performance for smooth messaging."
+                    "High-quality group streaming with low latency.",
+                    "Private and public group chat options."
                 ]}
                 FeatureList2={[
-                    "Cloud-based chat sync across devices.",
-                    "Strong end-to-end security and privacy."
+                    "Real-time message delivery and read receipts.",
+                    "Advanced privacy controls and security features."
                 ]}
-                btnname="Download App"
-                btnurl="/about"
+                btnname="Get Started"
+                btnurl="/contact"
             ></Choose1>
 
             {/* FEATURES */}
@@ -92,9 +92,9 @@ const Home = () => {
 
             {/* CTA SECTION */}
             <Cta1
-                subtitle="Get Chatyzyr Today"
-                title="Download the App & Start Chatting Instantly"
-                content="Experience seamless messaging, secure communication, and powerful group chat features. Start your free trial and explore the next generation of social interaction."
+                subtitle="Join Chatzyr Today"
+                title="Start Connecting with Friends"
+                content="Download Chatzyr now on iOS and Android. Experience seamless messaging, group chats, and live streaming. Join millions of users who trust Chatzyr for their social communication needs."
                 btnurl1="https://play.google.com/store"
                 btnurl2="https://www.apple.com/store"
                 img="/assets/images/cta/ctaThumb1_1.png"

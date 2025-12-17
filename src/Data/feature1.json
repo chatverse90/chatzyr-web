@@ -1,20 +1,20 @@
 [
   {
     "img": "/assets/images/icon/serviceIcon1_1.svg",
-    "title": "Software Features",
-    "desc": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",  
+    "title": "Direct Messaging",
+    "desc": "Send secure, private messages with end-to-end encryption. Chat one-on-one with friends and family with complete privacy and instant delivery.",  
     "addclass": "service-box style1 wow fadeInUp"  
   },
   {
     "img": "/assets/images/icon/serviceIcon1_2.svg",
-    "title": "Customization Option",
-    "desc": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
+    "title": "Group Chats",
+    "desc": "Create and manage group conversations with real-time messaging. Share media, coordinate events, and stay connected with multiple people at once.",
     "addclass": "service-box style1 wow fadeInUp"  
   },
   {
     "img": "/assets/images/icon/serviceIcon1_3.svg",
-    "title": "Subscription Plans",
-    "desc": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
+    "title": "Group Streaming",
+    "desc": "Stream live with friends and communities in high-definition quality. Host watch parties, gaming sessions, or just hang out together online.",
     "addclass": "service-box style1 active wow fadeInUp"  
   } 
 ]

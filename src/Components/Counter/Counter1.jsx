@@ -12,9 +12,7 @@ const Counter1 = () => {
         <div className="counter-section fix">
             <div className="counter-container-wrapper style1">
                 <div className="container">
-                    <div className="counter-wrapper style1 section-padding"
-                        data-background="/assets/images/shape/counterShape1_1.png">
-                        <div className="shape"></div>
+                    <div className="counter-wrapper style1 section-padding">
                         <div className="container">
                             <div className="row gy-5">
                                 <div className="col-xl-3 col-md-6 d-flex justify-content-center">

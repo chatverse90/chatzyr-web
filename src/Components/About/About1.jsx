@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Flame, Check } from 'lucide-react';
 
 const About1 = ({img1,img2,subtitle,title,content,FeatureList,btnname,btnurl}) => {
     return (
@@ -11,14 +12,6 @@ const About1 = ({img1,img2,subtitle,title,content,FeatureList,btnname,btnurl}) =
                             <div className="col-xl-6">
                                 <div className="about-thumb">
                                     <div className="bg"></div>
-                                    <div className="thumbShape1 d-none d-xxl-block cir36"><img
-                                            src="/assets/images/shape/aboutThumbShape1_1.png" alt="shape" /></div>
-                                    <div className="thumbShape2 d-none d-xxl-block cir36"><img
-                                            src="/assets/images/shape/aboutThumbShape1_2.png" alt="shape" /></div>
-                                    <div className="thumbShape3 d-none d-xxl-block cir36 float-bob-y"><img
-                                            src="/assets/images/shape/aboutThumbShape1_3.png" alt="shape" /></div>
-                                    <div className="thumbShape4 d-none d-xxl-block cir36"><img
-                                            src="/assets/images/shape/aboutThumbShape1_4.png" alt="shape" /></div>
                                     <div className="main-thumb">
                                         <img src={img1} alt="thumb" />
                                     </div>
@@ -32,14 +25,14 @@ const About1 = ({img1,img2,subtitle,title,content,FeatureList,btnname,btnurl}) =
                                 <div className="about-content">
                                     <div className="section-title">
                                         <div className="subtitle wow fadeInUp" data-wow-delay=".2s">
-                                            {subtitle} <img src="/assets/images/icon/fireIcon.svg" alt="icon" />
+                                            {subtitle} <Flame size={18} className="d-inline" style={{ color: 'var(--primary)' }} />
                                         </div>
                                         <h2 className="title wow fadeInUp" data-wow-delay=".4s">{title}</h2>
                                         <p className="section-desc wow fadeInUp" data-wow-delay=".6s">{content}</p>
                                     </div>
                                     <ul className="checklist style1 wow fadeInUp" data-wow-delay=".2s">
                                     {FeatureList?.map((item, index) => (
-                                        <li key={index}><img src="/assets/images/icon/checkmarkIcon.svg" alt="icon" /> {item}</li>
+                                        <li key={index}><Check size={18} className="d-inline" style={{ color: 'var(--primary)' }} /> {item}</li>
                                     ))}
                                     </ul>
                                     <Link className="theme-btn wow fadeInUp" data-wow-delay=".2s" to={btnurl}>{btnname}

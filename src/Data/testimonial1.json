@@ -1,38 +1,30 @@
 [
   {
-    "img": "/assets/images/testimoial/testimonialProfileThumb1_1.jpg",
-    "subTitle": "Team Leader",
-    "title": "Jacob Jones",
-    "desc": "There are many variations of passages of Lorem Ipsum available,a but chiropractor like majority have a suffered alteration in some form, by injected humour"  
+    "id": 1,
+    "title": "Alex Chen",
+    "subTitle": "Content Creator",
+    "img": "/assets/images/profile/profileImg1_1.png",
+    "desc": "Chatzyr has transformed how I connect with my audience. The group streaming feature is incredible, and the direct messaging keeps me in touch with my community effortlessly!"
   },
   {
-    "img": "/assets/images/testimoial/testimonialProfileThumb1_2.jpg",
-    "subTitle": "Team Leader",
-    "title": "Masirul Jones",
-    "desc": "There are many variations of passages of Lorem Ipsum available,a but chiropractor like majority have a suffered alteration in some form, by injected humour"
+    "id": 2,
+    "title": "Sarah Johnson",
+    "subTitle": "Community Manager",
+    "img": "/assets/images/profile/profileImg1_2.png",
+    "desc": "Managing multiple group chats has never been easier. Chatzyr's intuitive interface and real-time synchronization make it the perfect platform for coordinating with my team and community."
   },
   {
-    "img": "/assets/images/testimoial/testimonialProfileThumb1_3.jpg",
-    "subTitle": "Team Leader",
-    "title": "Adam Jones",
-    "desc": "There are many variations of passages of Lorem Ipsum available,a but chiropractor like majority have a suffered alteration in some form, by injected humour"
+    "id": 3,
+    "title": "Mike Ross",
+    "subTitle": "Social Media Influencer",
+    "img": "/assets/images/profile/profileImg1_3.png",
+    "desc": "The privacy features and end-to-end encryption give me peace of mind. Chatzyr combines security with amazing features - it's become my go-to app for all social communication."
   },
   {
-    "img": "/assets/images/testimoial/testimonialProfileThumb1_1.jpg",
-    "subTitle": "Team Leader",
-    "title": "Wade Warren",
-    "desc": "There are many variations of passages of Lorem Ipsum available,a but chiropractor like majority have a suffered alteration in some form, by injected humour" 
-  }, 
-  {
-    "img": "/assets/images/testimoial/testimonialProfileThumb1_2.jpg",
-    "subTitle": "Team Leader",
-    "title": "Masirul Jones",
-    "desc": "There are many variations of passages of Lorem Ipsum available,a but chiropractor like majority have a suffered alteration in some form, by injected humour"
-  },
-  {
-    "img": "/assets/images/testimoial/testimonialProfileThumb1_3.jpg",
-    "subTitle": "Team Leader",
-    "title": "Adam Jones",
-    "desc": "There are many variations of passages of Lorem Ipsum available,a but chiropractor like majority have a suffered alteration in some form, by injected humour"
-  }  
+    "id": 4,
+    "title": "Emily Blunt",
+    "subTitle": "Digital Artist",
+    "img": "/assets/images/profile/profileImg1_1.png",
+    "desc": "I love how Chatzyr brings my friends together. The group streaming feature lets us watch movies together, and the group chats keep our conversations organized and fun."
+  }
 ]

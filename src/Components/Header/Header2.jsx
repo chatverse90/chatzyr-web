@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Search, ArrowRight, X } from 'lucide-react';
 import Nav from './Nav';
 export default function Header2({ variant }) {
   const [mobileToggle, setMobileToggle] = useState(false);
@@ -62,12 +63,12 @@ export default function Header2({ variant }) {
             <div className="cs_main_header_right">
               <div className="header-btn d-flex align-items-center">
 
-              <a onClick={() => setSearchToggle(!searchToggle)} className="search-trigger search-icon"><i className="bi bi-search"></i></a>
+              <a onClick={() => setSearchToggle(!searchToggle)} className="search-trigger search-icon"><Search size={18} /></a>
                 <div className="header-button ms-4">
                     <Link to="/contact" className="theme-btn">
                         <span>
                             Get Started
-                            <i className="bi bi-arrow-right"></i>
+                            <ArrowRight size={16} />
                         </span>
                     </Link>
 
@@ -80,7 +81,7 @@ export default function Header2({ variant }) {
     </header>
       <div className={`search-wrap ${searchToggle ? 'active' : ''}`} >
       <div className="search-inner">
-          <i onClick={() => setSearchToggle(!searchToggle)} id="search-close" className="bi bi-x-lg search-close"></i>
+          <X onClick={() => setSearchToggle(!searchToggle)} id="search-close" className="search-close" size={20} style={{ cursor: 'pointer' }} />
           <div className="search-cell">
               <form method="get">
                   <div className="search-field-holder">

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Flame } from 'lucide-react';
 
 const Feature2 = () => {
     return (
@@ -11,17 +12,13 @@ const Feature2 = () => {
                             <div className="feature-content">
                                 <div className="section-title">
                                     <div className="subtitle wow fadeInUp" data-wow-delay=".2s">
-                                        Our Features <img src="/assets/images/icon/fireIcon.svg" alt="icon" />
+                                        Advanced Features <Flame size={18} className="d-inline" style={{ color: 'var(--primary)' }} />
                                     </div>
-                                    <h2 className="title wow fadeInUp" data-wow-delay=".4s">Our features will help to improve
-                                        business</h2>
-                                    <p className="section-desc wow fadeInUp" data-wow-delay=".6s">There are many variations of
-                                        passages of Lorem Ipsum available,
-                                        but the majority have suffered alteration in some form, by injected humour, or
-                                        randomised words which do not look even slightly</p>
+                                    <h2 className="title wow fadeInUp" data-wow-delay=".4s">Powerful tools to enhance your communication experience</h2>
+                                    <p className="section-desc wow fadeInUp" data-wow-delay=".6s">Chatzyr's advanced features are designed to make every interaction seamless and enjoyable. From intelligent message organization to real-time notifications and rich media support, we provide everything you need to stay connected and engaged with your social circles.</p>
                                 </div>
-                                <Link className="theme-btn wow fadeInUp" data-wow-delay=".2s" to="/contact">Start
-                                    Collaborator <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                <Link className="theme-btn wow fadeInUp" data-wow-delay=".2s" to="/contact">Download Now
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                         viewBox="0 0 16 16" fill="none">
                                         <g clipPath="url(#clip0_91_29)">
                                             <path
@@ -42,8 +39,8 @@ const Feature2 = () => {
                                 <div className="feature-box style1 child1">
                                     <div className="feature-box-header wow fadeInUp" data-wow-delay=".2s">
                                         <div className="content">
-                                            <h5>Software development</h5>
-                                            <p className="text">UX Research</p>
+                                            <h5>Real-time Messaging</h5>
+                                            <p className="text">Instant Delivery</p>
                                         </div>
                                         <div className="icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="34" height="35"
@@ -57,15 +54,13 @@ const Feature2 = () => {
                                             <span className="day">Today</span>
                                             <span className="time">07:02 AM</span>
                                         </div>
-                                        <div className="shape"><img src="/assets/images/shape/featureProfileShape1_1.png"
-                                                alt="shape" /></div>
                                     </div>
                                 </div>
                                 <div className="feature-box style1 child2">
                                     <div className="feature-box-header wow fadeInUp" data-wow-delay=".6s">
                                         <div className="content">
-                                            <h5>Design data & analytics</h5>
-                                            <p className="text">UX Research</p>
+                                            <h5>Group Management</h5>
+                                            <p className="text">Easy Control</p>
                                         </div>
                                         <div className="icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="34" height="35"
@@ -79,15 +74,13 @@ const Feature2 = () => {
                                             <span className="day">Today</span>
                                             <span className="time">07:02 AM</span>
                                         </div>
-                                        <div className="shape"><img src="/assets/images/shape/featureProfileShape1_1.png"
-                                                alt="shape" /></div>
                                     </div>
                                 </div>
                                 <div className="feature-box style1 wow fadeInUp" data-wow-delay=".6s">
                                     <div className="feature-box-header">
                                         <div className="content">
-                                            <h5>Dedicated Support</h5>
-                                            <p className="text">UX Research</p>
+                                            <h5>Live Streaming</h5>
+                                            <p className="text">HD Quality</p>
                                         </div>
                                         <div className="icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="34" height="35"
@@ -101,8 +94,6 @@ const Feature2 = () => {
                                             <span className="day">Today</span>
                                             <span className="time">07:02 AM</span>
                                         </div>
-                                        <div className="shape"><img src="/assets/images/shape/featureProfileShape1_1.png"
-                                                alt="shape" /></div>
                                     </div>
                                 </div>
                             </div>

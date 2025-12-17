@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Facebook, Twitter, Linkedin, Share2 } from 'lucide-react';
 import data from '../../Data/team1.json';
 
 const Team1 = () => {
@@ -20,10 +21,10 @@ const Team1 = () => {
                                     </h3>
                                     <p className="designation">{item.desc}</p>
                                     <ul className="social-links">
-                                    <li><Link to={item.facebook}><i className="bi bi-facebook"></i></Link></li>
-                            <li><Link to={item.twitter}><i className="bi bi-twitter"></i></Link></li>
-                            <li><Link to={item.linkedin}><i className="bi bi-linkedin"></i></Link></li>
-                            <li><Link to={item.pinterest}><i className="bi bi-pinterest"></i></Link></li>
+                                    <li><Link to={item.facebook}><Facebook size={18} /></Link></li>
+                            <li><Link to={item.twitter}><Twitter size={18} /></Link></li>
+                            <li><Link to={item.linkedin}><Linkedin size={18} /></Link></li>
+                            <li><Link to={item.pinterest}><Share2 size={18} /></Link></li>
                                     </ul>
                                 </div>
                             </div>

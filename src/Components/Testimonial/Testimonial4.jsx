@@ -2,6 +2,7 @@ import Slider from 'react-slick';
 import data from '../../Data/testimonial1.json'
 import SectionTitle from '../Common/SectionTitle';
 import { useRef } from 'react';
+import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 
 const Testimonial4 = () => {
 
@@ -62,8 +63,8 @@ const Testimonial4 = () => {
                         </div>
                         <div className="col-xl-6">
                             <div className="slider-arrow-button style2 text-end wow fadeInUp" data-wow-delay=".9s">
-                                <button onClick={previous} data-slider-prev="#testimonialSliderThree" className="slider-arrow arrowPrev"><i className="bi bi-chevron-left"></i></button>
-                                <button onClick={next} data-slider-next="#testimonialSliderThree" className="slider-arrow arrowNext"><i className="bi bi-chevron-right"></i></button>
+                                <button onClick={previous} data-slider-prev="#testimonialSliderThree" className="slider-arrow arrowPrev"><ChevronLeft size={20} /></button>
+                                <button onClick={next} data-slider-next="#testimonialSliderThree" className="slider-arrow arrowNext"><ChevronRight size={20} /></button>
                             </div>
                         </div>
                     </div>
@@ -89,15 +90,15 @@ const Testimonial4 = () => {
                                     </div>
                                     <div className="testimonial-body">
                                         <ul className="star-wrapper style1">
-                                            <li><img src="/assets/images/icon/starIcon1_1.svg" alt="icon" /></li>
-                                            <li><img src="/assets/images/icon/starIcon1_1.svg" alt="icon" /></li>
-                                            <li><img src="/assets/images/icon/starIcon1_1.svg" alt="icon" /></li>
-                                            <li><img src="/assets/images/icon/starIcon1_1.svg" alt="icon" /></li>
-                                            <li><img src="/assets/images/icon/starIcon1_1.svg" alt="icon" /></li>
+                                            <li><Star size={16} fill="currentColor" className="text-warning" /></li>
+                                            <li><Star size={16} fill="currentColor" className="text-warning" /></li>
+                                            <li><Star size={16} fill="currentColor" className="text-warning" /></li>
+                                            <li><Star size={16} fill="currentColor" className="text-warning" /></li>
+                                            <li><Star size={16} fill="currentColor" className="text-warning" /></li>
                                         </ul>
                                         <p className="desc">{item.desc}</p>
                                     </div>
-                                    <div className="quote-icon"><img src="/assets/images/icon/quoteIcon.svg" alt="icon" />
+                                    <div className="quote-icon"><Quote size={24} style={{ color: 'var(--primary)' }} />
                                     </div>
                                 </div>
                             </div>

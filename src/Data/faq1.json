@@ -1,26 +1,26 @@
 [
   {  
-    "title": "Looking for a solution to boost productivity?",
-    "desc": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly"
+    "title": "How secure is Chatzyr?",
+    "desc": "Chatzyr uses end-to-end encryption for all direct messages and group chats, ensuring your conversations remain private and secure. We also implement advanced security measures including two-factor authentication and regular security audits to protect your data."
   },
   {
-    "title": "Need an easy way to manage your projects?",
-    "desc": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly"
+    "title": "Can I use Chatzyr on multiple devices?",
+    "desc": "Yes, Chatzyr is available on iOS, Android, and Web platforms. Your messages and data sync seamlessly across all your devices, so you can continue conversations from anywhere."
   },
   {
-     "title": "Seeking a user-friendly solution for your team?",
-    "desc": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly"
+     "title": "How do group streams work?",
+    "desc": "Group streaming allows multiple users to stream together in real-time. You can create a stream, invite friends to join, and share the experience with your audience. All streams support HD quality video and audio with low latency."
   },
   {  
-    "title": "Looking for a solution to boost productivity?",
-    "desc": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly"
+    "title": "Is Chatzyr free to use?",
+    "desc": "Chatzyr offers a free tier with essential features including direct messaging, group chats, and basic streaming. Premium plans are available with additional features like advanced streaming quality, increased group sizes, and priority support."
   },
   {
-    "title": "Need an easy way to manage your projects?",
-    "desc": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly"
+    "title": "How do I create a group chat?",
+    "desc": "Creating a group chat is simple. Tap the new chat button, select 'New Group', add participants from your contacts, and start chatting. You can customize group settings, add admins, and manage permissions as needed."
   },
   {
-     "title": "Seeking a user-friendly solution for your team?",
-    "desc": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly"
+     "title": "What file types can I share?",
+    "desc": "Chatzyr supports sharing photos, videos, documents, and audio files. File size limits depend on your plan, with premium users enjoying larger upload limits. All shared media is encrypted and stored securely."
   }  
 ]

@@ -8,9 +8,9 @@ const Feature1 = () => {
                 <div className="container">
                     <div className="section-title text-center mxw-685 mx-auto wow fadeInUp" data-wow-delay=".2s">
                         <SectionTitle
-                            SubTitle="Why using our app"
-                            Title="Our app is great for individuals, startups and enterprises"
-                        ></SectionTitle>                       
+                            SubTitle="Amazing Features"
+                            Title="Everything you need to connect and communicate"
+                        ></SectionTitle>
                     </div>
                     <div className="wcu-wrapper style1">
                         <div className="row gy-5 d-flex justify-content-center">
@@ -18,46 +18,44 @@ const Feature1 = () => {
                                 <div className="wcu-content">
                                     <FeatureCard
                                         img="/assets/images/icon/wcuIcon1_1.svg"
-                                        title="High usability"
-                                        content="There are many variations of passages of Lorem Ipsum"
+                                        title="Group Streaming"
+                                        content="Stream live with friends in high-quality video and audio for immersive group experiences."
                                     ></FeatureCard>
-                                     <FeatureCard
+                                    <FeatureCard
                                         img="/assets/images/icon/wcuIcon1_2.svg"
-                                        title="Action Reminder"
-                                        content="There are many variations of passages of Lorem Ipsum"
-                                    ></FeatureCard>    
-                                      <FeatureCard
+                                        title="Direct Messages"
+                                        content="Send secure, private messages with end-to-end encryption for one-on-one conversations."
+                                    ></FeatureCard>
+                                    <FeatureCard
                                         img="/assets/images/icon/wcuIcon1_3.svg"
-                                        title="Merge Files"
-                                        content="There are many variations of passages of Lorem Ipsum"
-                                    ></FeatureCard> 
+                                        title="Group Chats"
+                                        content="Create and manage group conversations with real-time messaging and media sharing."
+                                    ></FeatureCard>
                                 </div>
                             </div>
                             <div className="col-xl-4 d-flex justify-content-center">
                                 <div className="wcu-thumb wow fadeInUp" data-wow-delay=".2s">
                                     <div className="main-thumb wow bounceInUp" data-wow-delay=".6s"><img
-                                            src="/assets/images/wcu/wcuThumb1_1.png" alt="thumb" /></div>
-                                    <div className="shape"><img src="/assets/images/shape/wcuThumbShape1_1.png" alt="shape" />
-                                    </div>
+                                        src="/assets/images/wcu/wcuThumb1_1.png" alt="thumb" /></div>
                                 </div>
                             </div>
                             <div className="col-xl-4 d-flex justify-content-center justify-content-xl-end">
                                 <div className="wcu-content">
                                     <FeatureCard
                                         img="/assets/images/icon/wcuIcon1_4.svg"
-                                        title="Free Live Chat"
-                                        content="There are many variations of passages of Lorem Ipsum"
+                                        title="Social Connections"
+                                        content="Build and maintain your social network with easy friend management and discovery."
                                     ></FeatureCard>
                                     <FeatureCard
                                         img="/assets/images/icon/wcuIcon1_5.svg"
-                                        title="Social Share"
-                                        content="There are many variations of passages of Lorem Ipsum"
-                                    ></FeatureCard>                                                                          
+                                        title="Media Sharing"
+                                        content="Share photos, videos, and files instantly with your contacts and groups."
+                                    ></FeatureCard>
                                     <FeatureCard
                                         img="/assets/images/icon/wcuIcon1_6.svg"
-                                        title="Custom Shortcuts"
-                                        content="There are many variations of passages of Lorem Ipsum"
-                                    ></FeatureCard> 
+                                        title="Privacy Controls"
+                                        content="Customize your privacy settings and control who can contact you or see your activity."
+                                    ></FeatureCard>
                                 </div>
                             </div>
                         </div>

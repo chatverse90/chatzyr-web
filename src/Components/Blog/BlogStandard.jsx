@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { User, MessageCircle, ArrowRight, Search, Calendar } from 'lucide-react';
 
 const BlogStandard = () => {
     return (
@@ -21,11 +22,11 @@ const BlogStandard = () => {
                             <div className="news-content">
                                 <ul>
                                     <li>
-                                    <i className="bi bi-person"></i>
+                                    <User size={16} />
                                         By Admin
                                     </li>
                                     <li>
-                                    <i className="bi bi-chat"></i>
+                                    <MessageCircle size={16} />
                                         3 Comments
                                     </li>
                                 </ul>
@@ -40,7 +41,7 @@ const BlogStandard = () => {
                                 </p>
                                 <Link to="/blog/blog-details" className="theme-btn mt-4">
                                     Read More
-                                    <i className="bi bi-arrow-right"></i>
+                                    <ArrowRight size={16} />
                                 </Link>
                             </div>
                         </div>
@@ -57,11 +58,11 @@ const BlogStandard = () => {
                             <div className="news-content">
                                 <ul>
                                     <li>
-                                    <i className="bi bi-person"></i>
+                                    <User size={16} />
                                         By Admin
                                     </li>
                                     <li>
-                                    <i className="bi bi-chat"></i>
+                                    <MessageCircle size={16} />
                                         2 Comments
                                     </li>
                                 </ul>
@@ -76,7 +77,7 @@ const BlogStandard = () => {
                                 </p>
                                 <Link to="/blog/blog-details" className="theme-btn mt-4">
                                     Read More
-                                    <i className="bi bi-arrow-right"></i>
+                                    <ArrowRight size={16} />
                                 </Link>
                             </div>
                         </div>
@@ -93,11 +94,11 @@ const BlogStandard = () => {
                             <div className="news-content">
                                 <ul>
                                     <li>
-                                    <i className="bi bi-person"></i>
+                                    <User size={16} />
                                         By Admin
                                     </li>
                                     <li>
-                                    <i className="bi bi-chat"></i>
+                                    <MessageCircle size={16} />
                                         0 Comments
                                     </li>
                                 </ul>
@@ -112,7 +113,7 @@ const BlogStandard = () => {
                                 </p>
                                 <Link to="/blog/blog-details" className="theme-btn mt-4">
                                     Read More
-                                    <i className="bi bi-arrow-right"></i>
+                                    <ArrowRight size={16} />
                                 </Link>
                             </div>
                         </div>
@@ -130,7 +131,7 @@ const BlogStandard = () => {
                             <div className="search-widget">
                                 <form action="#">
                                     <input type="text" placeholder="Search here" />
-                                    <button type="submit"><i className="bi bi-search"></i></button>
+                                    <button type="submit"><Search size={18} /></button>
                                 </form>
                             </div>
                         </div>
@@ -161,7 +162,7 @@ const BlogStandard = () => {
                                     <div className="recent-content">
                                         <ul>
                                             <li>
-                                                <img src="/assets/images/icon/calendarIcon.svg" alt="icon" />
+                                                <Calendar size={16} />
                                                 18 Dec, 2024
                                             </li>
                                         </ul>
@@ -180,7 +181,7 @@ const BlogStandard = () => {
                                     <div className="recent-content">
                                         <ul>
                                             <li>
-                                                <img src="/assets/images/icon/calendarIcon.svg" alt="icon" />
+                                                <Calendar size={16} />
                                                 18 Dec, 2024
                                             </li>
                                         </ul>
@@ -199,7 +200,7 @@ const BlogStandard = () => {
                                     <div className="recent-content">
                                         <ul>
                                             <li>
-                                                <img src="/assets/images/icon/calendarIcon.svg" alt="icon" />
+                                                <Calendar size={16} />
                                                 18 Dec, 2024
                                             </li>
                                         </ul>

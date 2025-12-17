@@ -3,6 +3,7 @@ import data from '../../Data/testimonial2.json';
 import SectionTitle from "../Common/SectionTitle";
 import { useEffect, useRef } from "react";
 import loadBackgroudImages from "../Common/loadBackgroudImages";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Testimonial3 = () => {
 
@@ -61,8 +62,8 @@ const Testimonial3 = () => {
                 ></SectionTitle>
                 </div>
                 <div className="array-button">
-                    <button onClick={previous} className="array-prev"><i className="bi bi-chevron-left"></i></button>
-                    <button onClick={next} className="array-next"><i className="bi bi-chevron-right"></i></button>
+                    <button onClick={previous} className="array-prev"><ChevronLeft size={20} /></button>
+                    <button onClick={next} className="array-next"><ChevronRight size={20} /></button>
                 </div>                
             </div>
             <div className="swiper testimonial-slider-3">

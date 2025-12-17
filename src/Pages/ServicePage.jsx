@@ -10,11 +10,11 @@ const ServicePage = () => {
             <BreadCumb
                 bgimg="/assets/images/bg/breadcumgBg.png"
                 Title="Services"
-            ></BreadCumb>   
-            <Cta2></Cta2>  
-            <Services1></Services1>   
+            ></BreadCumb>
+            <Cta2></Cta2>
+            <Services1></Services1>
             <Team2></Team2>
-            <Brand3></Brand3>    
+            <Brand3></Brand3>
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import data from '../../Data/testimonial1.json';
 import SectionTitle from "../Common/SectionTitle";
+import { Star, Quote } from 'lucide-react';
 
 const Testimonial = () => {
 
@@ -42,8 +43,6 @@ const Testimonial = () => {
             <div className="testimonial-container-wrapper style1">
                 <div className="container">
                     <div className="testimonial-wrapper style1 section-padding fix">
-                        <div className="shape1"><img src="/assets/images/shape/testimonialShape1_1.png" alt="shape" /></div>
-                        <div className="shape2"><img src="/assets/images/shape/testimonialShape1_2.png" alt="shape" /></div>
                         <div className="container">
                             <div className="section-title text-center mxw-685 mx-auto">
                                 <SectionTitle
@@ -72,16 +71,15 @@ const Testimonial = () => {
                                                 </div>
                                                 <div className="testimonial-body">
                                                     <ul className="star-wrapper style1">
-                                                        <li><img src="/assets/images/icon/starIcon1_1.svg" alt="icon" /></li>
-                                                        <li><img src="/assets/images/icon/starIcon1_1.svg" alt="icon" /></li>
-                                                        <li><img src="/assets/images/icon/starIcon1_1.svg" alt="icon" /></li>
-                                                        <li><img src="/assets/images/icon/starIcon1_1.svg" alt="icon" /></li>
-                                                        <li><img src="/assets/images/icon/starIcon1_1.svg" alt="icon" /></li>
+                                                        <li><Star size={16} fill="currentColor" className="text-warning" /></li>
+                                                        <li><Star size={16} fill="currentColor" className="text-warning" /></li>
+                                                        <li><Star size={16} fill="currentColor" className="text-warning" /></li>
+                                                        <li><Star size={16} fill="currentColor" className="text-warning" /></li>
+                                                        <li><Star size={16} fill="currentColor" className="text-warning" /></li>
                                                     </ul>
                                                     <p className="desc">{item.desc}</p>
                                                 </div>
-                                                <div className="quote-icon"><img src="/assets/images/icon/quoteIcon.svg"
-                                                        alt="icon" /></div>
+                                                <div className="quote-icon"><Quote size={24} style={{ color: 'var(--primary)' }} /></div>
                                             </div>
                                         </div>
                                         ))}

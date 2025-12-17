@@ -1,12 +1,10 @@
 import parse from 'html-react-parser';
 import { Link } from 'react-router-dom';
+import { ArrowRight, Flame, Check } from 'lucide-react';
 
 const Feature4 = ({img,subtitle,title,content,FeatureList,btnname,btnurl}) => {
     return (
         <section className="about-section-3 fix section-padding">
-        <div className="about-shape">
-            <img src="/assets/images/about/shape.png" alt="img" />
-        </div>
         <div className="container">
             <div className="about-wrapper-3">
                 <div className="row g-4 align-items-center">
@@ -19,7 +17,7 @@ const Feature4 = ({img,subtitle,title,content,FeatureList,btnname,btnurl}) => {
                         <div className="about-content">
                             <div className="section-title">
                                 <div className="subtitle wow fadeInUp" data-wow-delay=".2s">
-                                    {subtitle} <img src="/assets/images/icon/fireIcon.svg" alt="icon" />
+                                    {subtitle} <Flame size={18} className="d-inline" style={{ color: 'var(--primary)' }} />
                                 </div>
                                 <h2 className="title wow fadeInUp" data-wow-delay=".4s">{title}</h2>
                                 <p className="wow fadeInUp" data-wow-delay=".6s">
@@ -30,7 +28,7 @@ const Feature4 = ({img,subtitle,title,content,FeatureList,btnname,btnurl}) => {
                             {FeatureList?.map((item, index) => (
                                 <li key={index}>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="20" viewBox="0 0 17 20" fill="none">
-                                        <path d="M6.47192 1.19299C7.72371 0.456638 9.27628 0.456638 10.5281 1.19299L15.0281 3.84005C16.2498 4.55873 17 5.87033 17 7.28778V12.7122C17 14.1297 16.2498 15.4413 15.0281 16.16L10.5281 18.807C9.27628 19.5434 7.72372 19.5434 6.47192 18.807L1.97192 16.16C0.750165 15.4413 0 14.1297 0 12.7122V7.28778C0 5.87033 0.750165 4.55873 1.97192 3.84005L6.47192 1.19299Z" fill="#7444FD"/>
+                                        <path d="M6.47192 1.19299C7.72371 0.456638 9.27628 0.456638 10.5281 1.19299L15.0281 3.84005C16.2498 4.55873 17 5.87033 17 7.28778V12.7122C17 14.1297 16.2498 15.4413 15.0281 16.16L10.5281 18.807C9.27628 19.5434 7.72372 19.5434 6.47192 18.807L1.97192 16.16C0.750165 15.4413 0 14.1297 0 12.7122V7.28778C0 5.87033 0.750165 4.55873 1.97192 3.84005L6.47192 1.19299Z" fill="rgb(19, 70, 134)"/>
                                         <circle cx="8.5" cy="10.5" r="3.5" fill="white"/>
                                       </svg>
                                       {parse(item)}
@@ -38,7 +36,7 @@ const Feature4 = ({img,subtitle,title,content,FeatureList,btnname,btnurl}) => {
                                 ))}
 
                             </ul>
-                            <Link className="theme-btn style2 wow fadeInUp" data-wow-delay=".4s" to={btnurl}>{btnname} <i className="bi bi-arrow-right"></i>
+                            <Link className="theme-btn style2 wow fadeInUp" data-wow-delay=".4s" to={btnurl}>{btnname} <ArrowRight size={16} />
                             </Link>
                         </div>
                     </div>

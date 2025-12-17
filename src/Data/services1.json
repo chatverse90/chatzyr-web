@@ -1,32 +1,38 @@
 [
   {
-    "icon": "/assets/images/icon/serviceIcon3_1.svg",
-    "title": "Software Features",
-    "desc": "There are many variations of passages of Lorem Ipsum available, but majority have suffered alteration in some form"   
+    "id": 1,
+    "icon": "/assets/images/icon/serviceIcon1_1.svg",
+    "title": "Direct Messaging",
+    "desc": "Send secure, private messages with end-to-end encryption. Chat one-on-one with friends and family with complete privacy and instant delivery."
   },
   {
-    "icon": "/assets/images/icon/serviceIcon3_2.svg",
-    "title": "Subscription Plans",
-    "desc": "There are many variations of passages of Lorem Ipsum available, but majority have suffered alteration in some form"   
+    "id": 2,
+    "icon": "/assets/images/icon/serviceIcon1_2.svg",
+    "title": "Group Chats",
+    "desc": "Create and manage group conversations with real-time messaging. Share media, coordinate events, and stay connected with multiple people at once."
   },
   {
-    "icon": "/assets/images/icon/serviceIcon3_3.svg",
-    "title": "Customization Option",
-    "desc": "There are many variations of passages of Lorem Ipsum available, but majority have suffered alteration in some form"  
+    "id": 3,
+    "icon": "/assets/images/icon/serviceIcon1_3.svg",
+    "title": "Group Streaming",
+    "desc": "Stream live with friends and communities in high-definition quality. Host watch parties, gaming sessions, or just hang out together online."
   },
   {
-    "icon": "/assets/images/icon/serviceIcon3_5.svg",
-    "title": "Choose a App",
-    "desc": "There are many variations of passages of Lorem Ipsum available, but majority have suffered alteration in some form"  
+    "id": 4,
+    "icon": "/assets/images/icon/serviceIcon1_4.svg",
+    "title": "Social Connections",
+    "desc": "Build and maintain your social network with easy friend management. Discover new connections and stay in touch with your community."
   },
   {
-    "icon": "/assets/images/icon/serviceIcon3_5.svg",
-    "title": "Clean Modern Code",
-    "desc": "There are many variations of passages of Lorem Ipsum available, but majority have suffered alteration in some form"
+    "id": 5,
+    "icon": "/assets/images/icon/serviceIcon1_5.svg",
+    "title": "Privacy & Security",
+    "desc": "Advanced privacy controls and security features protect your conversations and personal information. You control who can contact you and see your activity."
   },
   {
-    "icon": "/assets/images/icon/serviceIcon3_6.svg",
-    "title": "User Interactive",
-    "desc": "There are many variations of passages of Lorem Ipsum available, but majority have suffered alteration in some form"   
-  }    
+    "id": 6,
+    "icon": "/assets/images/icon/serviceIcon1_6.svg",
+    "title": "Media Sharing",
+    "desc": "Share photos, videos, and files instantly with your contacts and groups. Express yourself with rich media content in every conversation."
+  }
 ]

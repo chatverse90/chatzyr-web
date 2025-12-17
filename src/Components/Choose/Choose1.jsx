@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Flame, Check } from 'lucide-react';
 
 const Choose1 = ({subtitle,title,content,FeatureList,FeatureList2,btnname,btnurl}) => {
     return (
@@ -13,7 +14,7 @@ const Choose1 = ({subtitle,title,content,FeatureList,FeatureList2,btnname,btnurl
                                     <div className="advantage-content">
                                         <div className="section-title wow fadeInUp" data-wow-delay=".2s">
                                             <div className="subtitle">
-                                                {subtitle} <img src="/assets/images/icon/fireIcon.svg" alt="icon" />
+                                                {subtitle} <Flame size={18} className="d-inline" style={{ color: 'var(--primary)' }} />
                                             </div>
                                             <h2 className="title">{title}</h2>
                                             <p className="section-desc">{content}</p>
@@ -21,7 +22,7 @@ const Choose1 = ({subtitle,title,content,FeatureList,FeatureList2,btnname,btnurl
                                         <div className="checklist-wrapper style1 wow fadeInUp" data-wow-delay=".4s">
                                             <ul className="checklist style1">
                                             {FeatureList?.map((item, index) => (
-                                                <li key={index}><img src="/assets/images/icon/checkmarkIcon.svg" alt="icon" /> {item}</li>
+                                                <li key={index}><Check size={18} className="d-inline" style={{ color: 'var(--primary)' }} /> {item}</li>
                                             ))}
                                             </ul>
                                             <ul className="checklist style1">
@@ -55,8 +56,6 @@ const Choose1 = ({subtitle,title,content,FeatureList,FeatureList2,btnname,btnurl
                                         <div className="thumb2 img-custom-anim-right wow fadeInRight" data-wow-delay=".4s"
                                             data-tilt data-tilt-max="15"><img
                                                 src="/assets/images/advantage/advantageThumb1_2.png" alt="thumb" /></div>
-                                        <div className="shape1"><img src="/assets/images/shape/advanceThumbShape1_1.png"
-                                                alt="shape" /></div>
                                     </div>
                                 </div>
                             </div>

@@ -25,7 +25,6 @@ const HowWork2 = () => {
         <section className="wp-section section-padding fix">
         <div className="container">
             <div className="wp-wrapper style2">
-                <div className="shape"> <img src="/assets/images/shape/wpShape2_1.png" alt="shape" /> </div>
                 <div className="row gy-5 gy-md-0 gx-60 d-flex align-items-center">
                     <div className="col-xl-4 order-2 order-xl-1">
                         <div className="wp-content style2">

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import loadBackgroudImages from "../Common/loadBackgroudImages";
 import { Link } from "react-router-dom";
+import { Smartphone } from 'lucide-react';
 import parse from 'html-react-parser';
 
 const HeroBanner3 = ({bgimg,subtitle,title,content,btnname,btnurl,btnname2,btnurl2,img1,img2}) => {
@@ -40,7 +41,7 @@ const HeroBanner3 = ({bgimg,subtitle,title,content,btnname,btnurl,btnname2,btnur
 
                             </Link>
                             <Link className="theme-btn style2 wow fadeInUp" data-wow-delay=".2s"
-                                to={btnurl2}>{btnname2} <i className="bi bi-android2"></i>
+                                to={btnurl2}>{btnname2} <Smartphone size={18} />
                                 
                             </Link>
                         </div>

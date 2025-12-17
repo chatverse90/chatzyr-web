@@ -1,4 +1,6 @@
 
+import { Facebook, Twitter, Linkedin, Share2, Phone, Send, MapPin } from 'lucide-react';
+
 const TeamDetails = () => {
     return (
 <section className="team-details-area section-padding pb-0 fix">
@@ -18,10 +20,10 @@ const TeamDetails = () => {
                                     <span>Gemini market</span>
                                 </div>
                                 <div className="gt-social">
-                                    <a href="https://www.facebook.com/"><i className="bi bi-facebook"></i></a>
-                                    <a href="https://www.x.com/" className="active"><i className="bi bi-twitter"></i></a>
-                                    <a href="https://www.linkedin.com/"><i className="bi bi-linkedin"></i></a>
-                                    <a href="https://www.youtube.com/"><i className="bi bi-pinterest"></i></a>
+                                    <a href="https://www.facebook.com/"><Facebook size={18} /></a>
+                                    <a href="https://www.x.com/" className="active"><Twitter size={18} /></a>
+                                    <a href="https://www.linkedin.com/"><Linkedin size={18} /></a>
+                                    <a href="https://www.youtube.com/"><Share2 size={18} /></a>
                                 </div>
                             </div>
                             <p className="mt-3 wow fadeInUp" data-wow-delay=".9s">
@@ -37,19 +39,19 @@ const TeamDetails = () => {
                             <div className="info-wrapper d-flex wow fadeInUp" data-wow-delay="1.2s">
                                 <div className="checklist">
                                     <ul className="d-flex align-items-center gap-3">
-                                        <li><i className="bi bi-telephone-fill"></i></li>
+                                        <li><Phone size={18} /></li>
                                         <li>+91 5698 0036 420</li>
                                     </ul>
                                 </div>
                                 <div className="checklist">
                                     <ul className="d-flex align-items-center gap-3">
-                                        <li><i className="bi bi-send"></i></li>
+                                        <li><Send size={18} /></li>
                                         <li>info@exmple.com</li>
                                     </ul>
                                 </div>
                                 <div className="checklist">
                                     <ul className="d-flex align-items-center gap-3">
-                                        <li><i className="bi bi-geo-alt-fill"></i></li>
+                                        <li><MapPin size={18} /></li>
                                         <li>26 Manor St, Braintree UK</li>
                                     </ul>
                                 </div>

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { User, MessageCircle, ArrowRight, Search, Facebook, Twitter, Linkedin, Share2, Calendar, Tag } from 'lucide-react';
 import loadBackgroudImages from "../Common/loadBackgroudImages";
 
 const BlogDetails = () => {
@@ -21,15 +22,15 @@ const BlogDetails = () => {
                                 <div className="post-content">
                                     <ul className="post-list d-flex align-items-center wow fadeInUp" data-wow-delay=".2s">
                                         <li>
-                                        <i className="bi bi-person"></i>
+                                        <User size={16} />
                                             By Admin
                                         </li>
                                         <li>
-                                        <i className="bi bi-chat"></i>
+                                        <MessageCircle size={16} />
                                             2 Comments
                                         </li>
                                         <li>
-                                            <img src="/assets/images/icon/tagIcon.png" alt="icon" />
+                                            <Tag size={16} />
                                             IT Services
                                         </li>
                                     </ul>
@@ -65,10 +66,10 @@ const BlogDetails = () => {
                                             viewBox="0 0 36 36" fill="none">
                                             <path
                                                 d="M7.71428 20.0711H0.5V5.64258H14.9286V20.4531L9.97665 30.3568H3.38041L8.16149 20.7947L8.5233 20.0711H7.71428Z"
-                                                stroke="#7444FD" />
+                                                stroke="rgb(19, 70, 134)" />
                                             <path
                                                 d="M28.2846 20.0711H21.0703V5.64258H35.4989V20.4531L30.547 30.3568H23.9507L28.7318 20.7947L29.0936 20.0711H28.2846Z"
-                                                stroke="#7444FD" />
+                                                stroke="rgb(19, 70, 134)" />
                                         </svg>
                                     </div>
                                     <p className="mt-4 mb-5 wow fadeInUp" data-wow-delay="1s">
@@ -117,10 +118,10 @@ const BlogDetails = () => {
                                     data-wow-delay="1.2s">
                                     <div className="social-share">
                                         <span className="me-3">Share:</span>
-                                        <a href="#"><i className="bi bi-facebook"></i></a>
-                                        <a href="#"><i className="bi bi-twitter"></i></a>
-                                        <a href="#"><i className="bi bi-linkedin"></i></a>
-                                        <a href="#"><i className="bi bi-pinterest"></i></a>
+                                        <a href="#"><Facebook size={18} /></a>
+                                        <a href="#"><Twitter size={18} /></a>
+                                        <a href="#"><Linkedin size={18} /></a>
+                                        <a href="#"><Share2 size={18} /></a>
                                     </div>
                                 </div>
                             </div>
@@ -196,7 +197,7 @@ const BlogDetails = () => {
                                         <div className="col-lg-6">
                                             <button type="submit" className="theme-btn">
                                                 Post a Comment
-                                                <i className="bi bi-arrow-right"></i>
+                                                <ArrowRight size={16} />
                                             </button>
                                         </div>
                                     </div>
@@ -214,7 +215,7 @@ const BlogDetails = () => {
                             <div className="search-widget">
                                 <form action="#">
                                     <input type="text" placeholder="Search here" />
-                                    <button type="submit"><i className="bi bi-search"></i></button>
+                                    <button type="submit"><Search size={18} /></button>
                                 </form>
                             </div>
                         </div>
@@ -245,7 +246,7 @@ const BlogDetails = () => {
                                     <div className="recent-content">
                                         <ul>
                                             <li>
-                                                <img src="/assets/images/icon/calendarIcon.svg" alt="icon" />
+                                                <Calendar size={16} />
                                                 18 Dec, 2024
                                             </li>
                                         </ul>
@@ -264,7 +265,7 @@ const BlogDetails = () => {
                                     <div className="recent-content">
                                         <ul>
                                             <li>
-                                                <img src="/assets/images/icon/calendarIcon.svg" alt="icon" />
+                                                <Calendar size={16} />
                                                 18 Dec, 2024
                                             </li>
                                         </ul>
@@ -283,7 +284,7 @@ const BlogDetails = () => {
                                     <div className="recent-content">
                                         <ul>
                                             <li>
-                                                <img src="/assets/images/icon/calendarIcon.svg" alt="icon" />
+                                                <Calendar size={16} />
                                                 18 Dec, 2024
                                             </li>
                                         </ul>
